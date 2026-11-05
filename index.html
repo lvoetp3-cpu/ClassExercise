@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,6 +155,7 @@
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            height: 100%;
         }
 
         .work-card:hover {
@@ -196,16 +196,12 @@
 
         .resume-btn {
             border-radius: 1px;
-            /* 讓按鈕兩端變成圓弧狀 */
             padding: 8px 20px;
-            /* 增加內邊距，讓框框左右稍微拉長 */
             transition: all 0.3s ease;
-            /* 讓滑鼠懸停時的發光效果更平滑 */
         }
 
         .resume-btn:hover {
             box-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
-            /* 滑鼠移上去時帶點微光 */
         }
 
         .custom-resume-btn {
@@ -218,59 +214,46 @@
             text-decoration: none;
             letter-spacing: 2px;
             border-radius: 10px;
-            /* 質感漸層背景：融合你網頁的亮藍與深色調 */
             background: linear-gradient(135deg, #cad2d3 0%, #8ebde7 100%);
             box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             overflow: hidden;
         }
 
-        /* 滑鼠懸停效果：放大、發光、微調漸層 */
         .custom-resume-btn:hover {
             color: #ffffff;
             transform: translateY(-2px);
             box-shadow: 0 8px 7px rgba(95, 229, 236, 0.5);
-            /* background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); */
         }
 
-        /* 點擊時的下壓感 */
         .custom-resume-btn:active {
             transform: translateY(-1px);
             box-shadow: 0 1px 3px rgba(0, 242, 254, 0.4);
         }
-    .profile-avatar-text {
-    width: 130px;                  /* 依你目前畫面比例調整的適中大小 */
-    height: 130px;
-    border-radius: 50%;            /* 完美的圓形 */
-    
-    /* 配合你的整體風格配色 */
-    background-color: #1b2838;     /* 融入背景的深灰藍色（可依你的深藍背景微調） */
-    border: 2px solid #52667a;     /* 畫面中那一圈低調細緻的灰色外框線 */
-    color: #ffffff;                /* 純白文字 */
-    
-    /* 字體美學微調 */
-    font-size: 40px;               /* 讓 BC 兩個字大小適中 */
-    font-weight: 800;              /* 扎實的粗體 */
-    letter-spacing: 1px;           /* 保持字體結構不散開 */
-    
-    /* 核心置中設定（絕不跑版） */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 30px auto;      /* 置中並與下方標題保持舒適留白 */
-}
 
+        .profile-avatar-text {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #1b2838;
+            border: 2px solid #52667a;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+        }
     </style>
 </head>
 
 <body>
-
     <!-- 個人介紹 Header -->
     <header class="profile-section">
         <div class="container">
-    <!-- 新的純文字粗體頭像 -->
-    <div class="profile-avatar-text">BC</div>
-
+            <div class="profile-avatar-text">BC</div>
             <h1 class="mt-4">學習歷程首頁</h1>
             <h4>Junior Frontend Developer & Learner</h4>
             <p class="mt-4 fs-5">
@@ -322,192 +305,93 @@
         <div class="container">
             <h2 class="section-title">學習歷程清單展示</h2>
 
-            <div class="row g-4">
-                <!-- 項目 1 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="0929travelfoodAI.html" target="_blank">
-                            <h5>JSON & forEach</h5>
-                            <h3>JS語法練習使用forEach Json travelfood</h3>
-                            <p class="text-muted mb-0">點擊前往觀看詳細練習成果與資料串接畫面。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 2 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="0924jsscripe.html" target="_blank">
-                            <h5>JavaScript Basics</h5>
-                            <h3>Console log練習</h3>
-                            <p class="text-muted mb-0">點擊前往觀看主控台輸出與基礎邏輯演練。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 3 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="0923exercise01.html" target="_blank">
-                            <h5>Exercise 01</h5>
-                            <h3>0923exercirse練習</h3>
-                            <p class="text-muted mb-0">點擊前往觀看早期基礎排版與語法練習。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 4 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="0923exercise01-AI.html" target="_blank">
-                            <h5>AI Assisted</h5>
-                            <h3>0923exercirse練習W/ AI</h3>
-                            <p class="text-muted mb-0">點擊前往觀看透過 AI 輔助優化後的練習成果。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 5 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1001 boostrap01.html" target="_blank">
-                            <h5>Bootstrap 5</h5>
-                            <h3>1001 boostrap01</h3>
-                            <p class="text-muted mb-0">點擊前往觀看 Bootstrap 響應式框架網頁設計。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 6 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1006 exercise01me.html" target="_blank">
-                            <h5>Layout Practice</h5>
-                            <h3>1006 exercise01me</h3>
-                            <p class="text-muted mb-0">點擊前往觀看個人化排版與切版練習。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 7 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1008 exercise02me.html" target="_blank">
-                            <h5>Advanced Layout</h5>
-                            <h3>1008 exercise02me</h3>
-                            <p class="text-muted mb-0">點擊前往觀看第二階段切版與樣式微調。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 8 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1013 flex exercise01.html" target="_blank">
-                            <h5>Flexbox</h5>
-                            <h3>1013 flex exercise01</h3>
-                            <p class="text-muted mb-0">點擊前往觀看 Flex 彈性盒模型排版練習。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 9 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1015 CH8 forms.html" target="_blank">
-                            <h5>Forms</h5>
-                            <h3>1015 CH8 forms</h3>
-                            <p class="text-muted mb-0">點擊前往觀看表單設計與輸入控制元件練習。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 10 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1015 CH8 forms EX01.html" target="_blank">
-                            <h5>Forms Exercise</h5>
-                            <h3>1015 CH8 forms EX01</h3>
-                            <p class="text-muted mb-0">點擊前往觀看表單綜合應用演練。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 11 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1027-indexaitry02.html" target="_blank">
-                            <h5>Forms Exercise</h5>
-                            <h3>1027 CH8 forms AI套版</h3>
-                            <p class="text-muted mb-0">點擊前往觀看表單綜合應用演練。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 12 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1027-indexaitry01.html" target="_blank">
-                            <h5>Forms Exercise</h5>
-                            <h3>1027 CH8 forms AI套版</h3>
-                            <p class="text-muted mb-0">點擊前往觀看表單綜合應用演練。</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 13 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1103-Career_Island.html" target="_blank">
-                            <h5>Vibe Coding</h5>
-                            <h3>1103 初心者職業島Career Island</h3>
-                            <p class="text-muted mb-0">給國高中學生未來職涯參考</p>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- 項目 14 -->
-                <div class="col-md-4">
-                    <div class="work-card">
-                        <a href="1104newindex/index.html" target="_blank">
-                            <h5>Vibe Coding</h5>
-                            <h3>1105 SPA一頁式個人履歷</h3>
-                            <p class="text-muted mb-0">求職履歷</p>
-                        </a>
-                    </div>
-                </div>
+            <!-- 排序控制下拉選單 -->
+            <div class="d-flex justify-content-end mb-4">
+                <label for="sortSelect" class="align-self-center me-2 fw-bold text-secondary">排序方式：</label>
+                <select id="sortSelect" class="form-select w-auto">
+                    <option value="desc">日期：由新到舊 (最新優先)</option>
+                    <option value="asc">日期：由舊到新 (最早優先)</option>
+                </select>
             </div>
 
+            <!-- 動態渲染卡片的容器 -->
+            <div class="row g-4" id="projects-container"></div>
         </div>
     </section>
 
     <!-- 聯絡與頁尾 -->
     <footer>
-        <div class="container text-center"> <!-- 加入 text-center 確保所有文字與按鈕置中 -->
+        <div class="container text-center">
             <h3 class="fw-bold mb-4">CONTACT & INFO</h3>
             <p>學習歷程檔案庫 | 互動網頁設計專題</p>
 
-            <!-- 新增的個人履歷按鈕框 -->
             <div class="my-5 text-center">
                 <a href="https://stalwart-sunburst-5badbc.netlify.app/"
                     class="custom-resume-btn text-decoration-none text-black">
-                    <span>查看個人履歷 -></span>
+                    <span>查看個人履歷 -&gt;</span>
                 </a>
             </div>
 
             <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
             <p class="mb-0">
-                © 2026 Learning Portfolio | Designed with Bootstrap & Roller Effects
+                © 2026 Learning Portfolio | Designed with Bootstrap &amp; Roller Effects
             </p>
         </div>
     </footer>
-
 
     <!-- Bootstrap 與 jQuery Script -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
     <script src="js/travelfood.js"></script>
 
-</body>
+    <!-- 排序邏輯與動態卡片渲染 Script -->
+    <script>
+        const projects = [
+            { date: '2026-09-23', tag: 'Exercise 01', title: '0923exercirse練習', desc: '點擊前往觀看早期基礎排版與語法練習。', link: '0923exercise01.html' },
+            { date: '2026-09-23', tag: 'AI Assisted', title: '0923exercirse練習W/ AI', desc: '點擊前往觀看透過 AI 輔助優化後的練習成果。', link: '0923exercise01-AI.html' },
+            { date: '2026-09-24', tag: 'JavaScript Basics', title: 'Console log練習', desc: '點擊前往觀看主控台輸出與基礎邏輯演練。', link: '0924jsscripe.html' },
+            { date: '2026-09-29', tag: 'JSON & forEach', title: 'JS語法練習使用forEach Json travelfood', desc: '點擊前往觀看詳細練習成果與資料串接畫面。', link: '0929travelfoodAI.html' },
+            { date: '2026-10-01', tag: 'Bootstrap 5', title: '1001 boostrap01', desc: '點擊前往觀看 Bootstrap 響應式框架網頁設計。', link: '1001 boostrap01.html' },
+            { date: '2026-10-06', tag: 'Layout Practice', title: '1006 exercise01me', desc: '點擊前往觀看個人化排版與切版練習。', link: '1006 exercise01me.html' },
+            { date: '2026-10-08', tag: 'Advanced Layout', title: '1008 exercise02me', desc: '點擊前往觀看第二階段切版與樣式微調。', link: '1008 exercise02me.html' },
+            { date: '2026-10-13', tag: 'Flexbox', title: '1013 flex exercise01', desc: '點擊前往觀看 Flex 彈性盒模型排版練習。', link: '1013 flex exercise01.html' },
+            { date: '2026-10-15', tag: 'Forms', title: '1015 CH8 forms', desc: '點擊前往觀看表單設計與輸入控制元件練習。', link: '1015 CH8 forms.html' },
+            { date: '2026-10-15', tag: 'Forms Exercise', title: '1015 CH8 forms EX01', desc: '點擊前往觀看表單綜合應用演練。', link: '1015 CH8 forms EX01.html' },
+            { date: '2026-10-27', tag: 'Forms Exercise', title: '1027 CH8 forms AI套版 (01)', desc: '點擊前往觀看表單綜合應用演練。', link: '1027-indexaitry01.html' },
+            { date: '2026-10-27', tag: 'Forms Exercise', title: '1027 CH8 forms AI套版 (02)', desc: '點擊前往觀看表單綜合應用演練。', link: '1027-indexaitry02.html' },
+            { date: '2026-11-03', tag: 'AI Coding', title: '1103 初心者職業島Career Island', desc: '給國高中學生未來職涯參考', link: '1103-Career_Island.html' },
+            { date: '2026-11-05', tag: 'SPA Section', title: '1105 SPA一頁式個人履歷', desc: '求職履歷', link: '1104newindex/index.html' }
+        ];
 
+        const container = document.getElementById('projects-container');
+        const sortSelect = document.getElementById('sortSelect');
+
+        function renderProjects(data) {
+            container.innerHTML = data.map(item => `
+                <div class="col-md-4">
+                    <div class="work-card">
+                        <a href="${item.link}" target="_blank">
+                            <h5>${item.tag}</h5>
+                            <h3>${item.title}</h3>
+                            <p class="text-muted mb-0">${item.desc}</p>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function sortAndRender() {
+            const order = sortSelect.value;
+            const sortedData = [...projects].sort((a, b) => {
+                return order === 'asc' 
+                    ? a.date.localeCompare(b.date) 
+                    : b.date.localeCompare(a.date);
+            });
+            renderProjects(sortedData);
+        }
+
+        sortSelect.addEventListener('change', sortAndRender);
+        sortAndRender();
+    </script>
+</body>
 </html>
