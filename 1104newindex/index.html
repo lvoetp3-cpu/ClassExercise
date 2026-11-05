@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="陳楷東 Bruce 的形象官網：從製造業產品開發到可上線的數位產品。">
+  <title>陳楷東 Bruce｜從工廠現場，做到可上線的產品</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+  <link href="css/site.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+  <section id="s01">
+    <div class="container">
+      <div class="text-end py-2">
+        <a href="mailto:lvoetp@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope fa-lg"></i></a>
+        <a href="https://github.com/lvoetp-arch" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+            class="fa-brands fa-github fa-lg"></i></a>
+        <a href="https://lvoetp-arch.github.io/CareerIsland/" target="_blank" rel="noopener noreferrer"
+          aria-label="CareerIsland"><i class="fa-solid fa-globe fa-lg"></i></a>
+        <a href="https://drive.google.com/file/d/11XJMsGsIpt_iseUFf8ZtJMSpI4IyuUnE/view?usp=drive_link" target="_blank"
+          rel="noopener noreferrer" aria-label="作品集"><i class="fa-solid fa-folder-open fa-lg"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="s02">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-0">
+          <a class="navbar-brand" href="#s03">BRUCE <span>/ 陳楷東</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="切換選單">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="#s06">關於</a></li>
+              <li class="nav-item"><a class="nav-link" href="#s07">能力</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#s08" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">作品</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#s08">全部作品</a></li>
+                  <li><a class="dropdown-item" href="#s08">MiniEats</a></li>
+                  <li><a class="dropdown-item" href="#s08">Manufacture AI</a></li>
+                  <li><a class="dropdown-item" href="#s08">Akashic Navi</a></li>
+                  <li><a class="dropdown-item" href="#s12">驚奇瓶</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="https://lvoetp-arch.github.io/CareerIsland/" target="_blank"
+                      rel="noopener noreferrer">CareerIsland</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#s10">歷程</a></li>
+              <li class="nav-item"><a class="nav-link" href="#s15">展望</a></li>
+              <li class="nav-item"><a class="nav-link" href="#s16">聯絡</a></li>
+            </ul>
+            <button class="btn-copper ms-lg-3" data-bs-toggle="modal" data-bs-target="#consultModal">合作洽談</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <div class="modal fade consult-modal" id="consultModal" tabindex="-1" aria-labelledby="consultTitle"
+    aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="consultTitle">預約諮詢／合作洽談</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <form id="consultForm" name="consult" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="consult">
+          <p class="d-none"><label>請勿填寫 <input name="bot-field"></label></p>
+          <div class="modal-body">
+            <p class="note">適合討論產品規劃、MVP 驗證、AI 輔助開發，或跨領域產品整合。</p>
+            <p class="form-status note d-none" role="status"></p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="consultName">姓名</label>
+                <input class="form-control" id="consultName" name="name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="consultEmail">Email</label>
+                <input type="email" class="form-control" id="consultEmail" name="email" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="consultTopic">主題</label>
+                <select class="form-select" id="consultTopic" name="topic" required>
+                  <option value="" selected disabled>請選擇</option>
+                  <option>產品規劃／PRD</option>
+                  <option>MVP 原型</option>
+                  <option>AI 輔助開發</option>
+                  <option>面試／工作機會</option>
+                  <option>其他</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="consultMsg">說明</label>
+                <textarea class="form-control" id="consultMsg" name="message" rows="5" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-ghost" data-bs-dismiss="modal">取消</button>
+            <button type="submit" class="btn-copper">送出洽談</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section id="s03">
+      <div id="heroCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="我是誰"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="做過什麼"></button>
+          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="從哪裡來"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="background-image: url('images/workshop-tools.webp');">
+            <div class="carousel-caption">
+              <div class="eyebrow wow fadeIn">01 / WHO</div>
+              <h3 class="wow fadeIn" data-wow-delay="0.1s">HELLO, I'M<br><span>BRUCE CHEN</span></h3>
+              <p class="wow fadeIn" data-wow-delay="0.2s">跨領域產品創作者。運用製造業的開發方法，打造出能上線、能被使用的數位產品。</p>
+              <ul class="resume-list wow fadeInUp" data-wow-delay="0.3s">
+                <li><strong>角色：</strong>產品規劃 × AI 輔助實作 × 機構背景</li>
+                <li><strong>原則：</strong>先問值不值得做，再問怎麼做得出來</li>
+                <li><strong>現況：</strong>以 AI 協作開發為主，職訓補強讀碼與基礎，持續把真實作業流做成系統</li>
+              </ul>
+              <a href="#s08" class="btn-copper mt-4 wow fadeInUp" data-wow-delay="0.4s">查看作品</a>
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('images/casual-table.webp');">
+            <div class="carousel-caption">
+              <div class="eyebrow">02 / SHIPPED</div>
+              <h3>已上線的<span>產品</span></h3>
+              <p>MiniEats 服務夜市與小吃店：掃碼點餐、代建菜單，降低小店缺工時的數位門檻。</p>
+              <ul class="resume-list">
+                <li><strong>2 家店</strong>實際使用，累積 1000+ 筆訂單</li>
+                <li>從需求、PRD 到上線約 1 個月</li>
+                <li>不把早期驗證說成已放大的商業成果</li>
+              </ul>
+              <a href="#s08" class="btn-copper mt-4">看 MiniEats</a>
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image: url('images/lathe-swarf.webp');">
+            <div class="carousel-caption">
+              <div class="eyebrow">03 / SHOP FLOOR</div>
+              <h3>從<span>工廠現場</span>來</h3>
+              <p>14+ 年 OBM／ODM／OEM 產品開發：外觀、機構、DFM、樣品到量產。數位產品也沿用同一套驗證邏輯。</p>
+              <ul class="resume-list">
+                <li>雲科大工業設計；高工電腦機械製圖出身</li>
+                <li>SolidWorks、機構評估、成本與專利研究</li>
+                <li>Bubblingplus 驚奇瓶｜2019 台灣精品獎（產品獲獎）</li>
+              </ul>
+              <a href="#s10" class="btn-copper mt-4">看時間軸</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">上一張</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">下一張</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="s06">
+      <div class="container-fluid px-0">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5 bg-img about-photo d-none d-lg-block"
+            style="background-image: url('images/machining.webp');"></div>
+          <div class="col-lg-7 about-copy wow fadeInRight">
+            <span class="eyebrow">ABOUT</span>
+            <h2 class="section-title">關於我 <small>CHEN KAI DONG</small></h2>
+            <p>硬體機構背景：從工業設計系與機械製圖科出身。從零組件、材料、加工到樣品與量產全流程負責，具備扎實的製造業實戰經驗。</p>
+            <p>數位產品開發：將硬體邏輯導入數位產品。熟練掌握需求梳理、PRD 撰寫與工作單元拆解，專注於打造實用、順手的系統。</p>
+            <p class="mb-4">AI 全端協作：以 AI 協作為核心高效開發。目前於中彰投進修「AI 輔助全端開發」，深化程式基礎與全端觀念，致力於商用工具建立與原型驗證。
+            </p>
+            <a href="#s14" class="btn-copper">我能一起做的事</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s07" class="section-pad section-iron">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">能力地圖 <small>SKILLS</small></h2>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3 wow fadeInUp">
+            <article class="skill-card">
+              <h3>產品規劃</h3>
+              <p class="note">掌握從需求分析、範疇定義到設計溝通的全流程。</p>
+              <ul class="skill-list">
+                <li>需求分析</li>
+                <li>PRD</li>
+                <li>UI/UX</li>
+                <li>MVP 範圍</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+            <article class="skill-card">
+              <h3>AI 輔助開發</h3>
+              <p class="note">運用 AI 工具進行系統規劃、實作、測試與快速除錯。</p>
+              <ul class="skill-list">
+                <li>Cursor</li>
+                <li>Claude</li>
+                <li>Supabase</li>
+                <li>提示迭代</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+            <article class="skill-card">
+              <h3>實體產品開發</h3>
+              <p class="note">涵蓋外觀、機構設計，至樣品驗證與產前量產確認。</p>
+              <ul class="skill-list">
+                <li>SolidWorks</li>
+                <li>Inventor</li>
+                <li>Keyshot</li>
+                <li>DFM</li>
+                <li>專利研究</li>
+                <li>機械製圖丙級</li>
+              </ul>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+            <article class="skill-card">
+              <h3>電商與內容</h3>
+              <p class="note">具備數位通路建置、素材企劃與電商營運協作經驗。</p>
+              <ul class="skill-list">
+                <li>Shopline</li>
+                <li>Shopee</li>
+                <li>Pinkoi</li>
+                <li>EDM</li>
+                <li>Photoshop</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s04">
+      <div class="container-fluid">
+        <div class="row g-0">
+          <div class="col-md-5 s04-visual bg-img" style="background-image: url('images/workshop-interior.webp');">
+            <div class="s04-visual-overlay">
+              <span class="eyebrow">DATA / PROOF</span>
+              <h2 class="mt-3">數字，<br>只記錄真實發生的事。</h2>
+              <p>只記錄真實的現場、訂單與上線數據；未經嚴格驗證的，絕不計入成果。</p>
+            </div>
+          </div>
+          <div class="col-md-7 s04-content">
+            <span class="eyebrow wow fadeInUp"><i class="fa-solid fa-industry me-2"></i>MEASURABLE</span>
+            <h2 class="section-title mt-3 wow fadeInUp">以真實數據，驗證產品價值。</h2>
+            <div class="row g-3">
+              <div class="col-6 col-xl-3 wow zoomIn">
+                <div class="counter-card">
+                  <i class="fa-solid fa-calendar-check"></i>
+                  <div class="s04-number"><span class="counter01">14</span><span>+</span></div>
+                  <h4>年產品開發</h4>
+                  <p>OBM / ODM / OEM</p>
+                </div>
+              </div>
+              <div class="col-6 col-xl-3 wow zoomIn" data-wow-delay="0.1s">
+                <div class="counter-card">
+                  <i class="fa-solid fa-box-open"></i>
+                  <div class="s04-number"><span class="counter02">4</span></div>
+                  <h4>代表專案</h4>
+                  <p>實體＋數位</p>
+                </div>
+              </div>
+              <div class="col-6 col-xl-3 wow zoomIn" data-wow-delay="0.2s">
+                <div class="counter-card">
+                  <i class="fa-solid fa-store"></i>
+                  <div class="s04-number"><span class="counter03">2</span></div>
+                  <h4>實際使用店家</h4>
+                  <p>MiniEats</p>
+                </div>
+              </div>
+              <div class="col-6 col-xl-3 wow zoomIn" data-wow-delay="0.3s">
+                <div class="counter-card">
+                  <i class="fa-solid fa-receipt"></i>
+                  <div class="s04-number"><span class="counter04">1000</span>+</div>
+                  <h4>累積訂單</h4>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s08" class="section-pad section-plate">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">精選作品 <small>PROJECTS</small></h2>
+
+        <div class="row g-4">
+          <div class="col-lg-6 wow fadeInUp">
+            <article class="project-card">
+              <div class="project-banner">
+                <span class="eyebrow">LIVE PRODUCT</span>
+                <h3>MiniEats｜小店掃碼點餐</h3>
+              </div>
+              <div class="project-body">
+                <p>專為夜市攤商與小吃店用的點餐與店務工具。主打 AI 代建菜單，降低小店缺工時導入數位工具的門檻。</p>
+                <div class="metric-row">
+                  <div class="metric"><strong>2 家</strong><span>實際使用</span></div>
+                  <div class="metric"><strong>1000+</strong><span>累積訂單</span></div>
+                  <div class="metric"><strong>&lt; NT$1,000</strong><span>月訂閱收入（店家付費）</span></div>
+                </div>
+                <ul class="skill-list">
+                  <li>Next.js</li>
+                  <li>Supabase</li>
+                  <li>Gemini + RAG</li>
+                  <li>LINE</li>
+                </ul>
+                <div class="mt-auto pt-3 d-flex flex-wrap gap-3 align-items-center">
+                  <button class="btn-copper" data-bs-toggle="modal" data-bs-target="#modalMiniEats">專案詳細</button>
+                  <a href="https://www.minieats.tw" target="_blank" rel="noopener noreferrer">造訪網站 ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <article class="project-card">
+              <div class="project-banner shift-steel">
+                <span class="eyebrow">ON HOLD</span>
+                <h3>Manufacture AI｜B2B 報價系統</h3>
+              </div>
+              <div class="project-body">
+                <p>專為製造業貿易商開發的自動化系統：涵蓋詢價整理、材料與製程底價分析、AI報價及製程風險說明、中文報價 PDF 生成與輕量營運主檔。基本功能已開發完成；因報價資料庫需長期累積、單人難以持續，目前暫緩。
+                </p>
+                <ul class="skill-list">
+                  <li>Next.js</li>
+                  <li>FastAPI</li>
+                  <li>Supabase</li>
+                  <li>Gemini</li>
+                </ul>
+                <p class="note">可註冊試用，AI 報價設有次數限制。</p>
+                <div class="mt-auto pt-3 d-flex flex-wrap gap-3 align-items-center">
+                  <button class="btn-copper" data-bs-toggle="modal" data-bs-target="#modalManufacture">專案詳細</button>
+                  <a href="https://app.akashicnavi.com/login" target="_blank" rel="noopener noreferrer">註冊試用 ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 wow fadeInUp">
+            <article class="project-card">
+              <div class="project-banner shift-patina">
+                <span class="eyebrow">PERSONAL PROJECT</span>
+                <h3>Akashic Navi｜多系統分析工具</h3>
+              </div>
+              <div class="project-body">
+                <p>將複雜套多套規則預先算成結構化資料，並交由 AI 解讀。前端採用封裝架構以保護核心公式，並藉此專案深化複雜條件邏輯、付費分層與多語系系統的實作經驗。</p>
+                <ul class="skill-list">
+                  <li>Next.js</li>
+                  <li>FastAPI</li>
+                  <li>Gemini</li>
+                  <li>多語系</li>
+                </ul>
+                <p class="note">以技術實作與邏輯驗證為主。</p>
+                <div class="mt-auto pt-3 d-flex flex-wrap gap-3 align-items-center">
+                  <button class="btn-copper" data-bs-toggle="modal" data-bs-target="#modalAkashic">專案詳細</button>
+                  <a href="https://www.akashicnavi.com" target="_blank" rel="noopener noreferrer">造訪網站 ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <article class="project-card">
+              <div class="project-banner">
+                <span class="eyebrow">PHYSICAL PRODUCT</span>
+                <h3>Bubblingplus｜驚奇瓶</h3>
+              </div>
+              <div class="project-body">
+                <p>創新飲品器具：與同事分工共同開發，主責外觀與機構設計，並統籌樣品、報價、小量產確認與廠商經營，同時負責官網與電商平台建置。產品成功量產上市，並榮獲 2019 年台灣精品獎（團隊共同研發）。</p>
+                <ul class="skill-list">
+                  <li>SolidWorks</li>
+                  <li>3D 建模</li>
+                  <li>量產導入</li>
+                  <li>官網及電商建置</li>
+                </ul>
+                <div class="mt-auto pt-3">
+                  <a href="#s12">看產品故事 ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 wow fadeInUp">
+            <article class="info-card d-lg-flex align-items-center justify-content-between gap-3">
+              <div>
+                <span class="eyebrow">PUBLIC REPO</span>
+                <h3 class="mt-2">CareerIsland｜初心者職業島</h3>
+                <p class="mb-0 note">源自想幫自己孩子探索未來的初衷，因而打造的 3D 職涯探索平台。系統將各行業的日常、所需技能與學習途徑轉化為島嶼互動介面，目前公開 3D 原型於 GitHub
+                  Pages 以供檢視。</p>
+                <ul class="list-unstyled p-0 m-0 note d-flex flex-column gap-2"
+                  style="font-size: 0.9rem; opacity: 0.85;">
+                  <li>• <strong>專案屬性：</strong>單純的公益頁面，目前以單一 HTML 檔案（約 300 餘行）實作前端互動。</li>
+                  <li>• <strong>後續規劃：</strong>持續補齊職業島嶼，並計畫加入簡單的人格測驗，協助孩子循序漸進找出職涯方向。</li>
+                </ul>
+              </div>
+              <a class="btn-ghost mt-3 mt-lg-0" href="https://lvoetp-arch.github.io/CareerIsland/" target="_blank"
+                rel="noopener noreferrer">開啟 CareerIsland</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s09" class="section-pad section-iron">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 wow fadeInLeft">
+            <span class="eyebrow">CASE / MINIEATS</span>
+            <h2 class="section-title">一個月從零到上線</h2>
+
+            <div class="bg-img"
+              style="background-image:url('images/planning-desk.webp'); min-height:280px; border:1px solid var(--line);">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="process-step wow fadeInRight">
+              <div class="step-index">01</div>
+              <h3>對準缺工</h3>
+              <p class="note mb-0">小店沒有人力維護複雜 POS 系統。優先實作「掃碼點餐」與「代建菜單」核心功能，其餘模組列入後續迭代。</p>
+            </div>
+            <div class="process-step wow fadeInRight" data-wow-delay="0.1s">
+              <div class="step-index">02</div>
+              <h3>PRD需求釐清與範疇拆解</h3>
+              <p class="note mb-0">與 AI 深入討論需求，將 PRD 拆解為可實作的最小單元，避免一次性涉入金流、會員與行銷等非核心功能。</p>
+            </div>
+            <div class="process-step wow fadeInRight" data-wow-delay="0.2s">
+              <div class="step-index">03</div>
+              <h3>上線再收訂單</h3>
+              <p class="note mb-0">一個月內推進至可使用狀態。2 家店家進場後，後續的功能優先序完全由第一線現場的回饋決定。
+              </p>
+            </div>
+            <div class="process-step wow fadeInRight" data-wow-delay="0.3s">
+              <div class="step-index">04</div>
+              <h3>2 家店實際使用，累積 1000+ 訂單</h3>
+              <p class="note mb-0">月訂閱收入低於 NT$1,000。目前能證實的是「有人在用、有人付費、能解決問題」。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s11">
+      <div class="row g-0">
+        <div class="col-md-6 split-panel bg-img" style="background-image: url('images/factory-pipes.webp');">
+          <div class="split-card wow fadeInLeft">
+            <span class="eyebrow">MANUFACTURING LENS</span>
+            <h2 class="h3 mt-2">搞定報價，光靠對話機器人沒用。</h2>
+            <p>涵蓋材料、製程、圖紙風險與工廠來回的複雜流程。Manufacture AI 納入雙軌制報價機制：一方面由長期收集的廠商資料庫進行精準報價，另一方面透過 AI 大數據分析市場均價與加工製程。</p>
+            <p class="note mb-0">基本業務流程已能運作；因報價資料庫需長期累積及維護，目前暫緩大規模拓展，專注於架構驗證。</p>
+          </div>
+        </div>
+        <div class="col-md-6 split-panel bg-img" style="background-image: url('images/laser-cut.webp');">
+          <div class="split-card wow fadeInRight">
+            <span class="eyebrow">WHY THIS WORK</span>
+            <h2 class="h3 mt-2">懂現場，才能避開看不見的坑。</h2>
+            <ul>
+              <li>以圖紙與 STEP 為關鍵輸入，確保估價精準度</li>
+              <li>遵循底價先行原則，以結構化架構引導 AI，確保數據真實性</li>
+              <li>產出高精確度中文 PDF，方便直接與工廠對接核對</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s12" class="section-pad section-iron">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 wow fadeInLeft">
+            <span class="eyebrow">PHYSICAL / 2017</span>
+            <h2 class="section-title">驚奇瓶：改變使用方式</h2>
+            <p>翻轉傳統飲品的操作模式，將手調過程轉化為產品的核心體驗。2017/1–2017/7 與同事分工開發，主責外觀與機構設計，並負責樣品、報價、小量產確認、廠商經營與官網電商；該產品後續於 2019
+              年榮獲台灣精品獎。</p>
+
+            <a class="btn-ghost mt-4" href="https://youtu.be/QAro66PLx_c" target="_blank"
+              rel="noopener noreferrer">觀看產品影片</a>
+          </div>
+          <div class="col-lg-6 wow fadeInRight">
+            <div class="bg-img"
+              style="background-image:url('images/glass-drink.webp'); min-height:380px; border:1px solid var(--line);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s13" class="section-pad section-plate">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">延伸創作 <small>AI CREATIVE</small></h2>
+        <p class="section-sub mx-auto text-center wow fadeInUp">生成式影像、音樂、短影音與官網實作。</p>
+        <div class="row g-4">
+          <div class="col-lg-12 wow fadeInUp">
+            <article class="info-card">
+              <span class="eyebrow">2025</span>
+              <h3 class="mt-2">AI Creative Lab</h3>
+              <p>獨立完成腳本企劃、素材生成與影音剪輯；運用 Veo、Sora、Pollo AI、Suno 等工具進行多媒體創作，作品皆收錄於獨立頁面。</p>
+
+              <a href="ai-creative-lab-v2.html" target="_blank" rel="noopener noreferrer">開啟 AI Creative Lab ↗</a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="s10" class="section-pad section-plate">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">職涯時間軸 <small>TIMELINE · 精選經歷</small></h2>
+
+        <div class="timeline">
+          <article class="timeline-item wow fadeInUp">
+            <div class="timeline-date">1994–2005｜製圖到工設</div>
+            <h3>台中高工機械製圖 → 亞東工設 → 雲科工設</h3>
+
+          </article>
+          <article class="timeline-item right wow fadeInUp">
+            <div class="timeline-date">2005–2014｜工業設計與機構（任職多家公司）</div>
+            <h3>文具、家具、車燈、BOM 與成本</h3>
+            <p>負責產品概念發想、3D 建模與樣品驗證，並執行跨部門協同開發。</p>
+          </article>
+          <article class="timeline-item wow fadeInUp">
+            <div class="timeline-date">2014/7–2021/2｜合昇昌</div>
+            <h3>家用品／氣泡水機開發</h3>
+            <p>2017/1–2017/7 開發Bubblingplus驚奇瓶（主責外觀與機構設計），官網及商城，獲 2019 台灣精品獎。</p>
+          </article>
+          <article class="timeline-item right wow fadeInUp">
+            <div class="timeline-date">2021/3–2023/3｜浤睿國際</div>
+            <h3>新產品開發 + 官網與行銷執行</h3>
+            <p>負責將產品推向市場的落地執行，涵蓋網站建置、活動企劃與產品結構評估。</p>
+          </article>
+          <article class="timeline-item wow fadeInUp">
+            <div class="timeline-date">2023/3–2023/11｜創業</div>
+            <h3>素食甜點品牌（大吉甜芯）</h3>
+            <p>與家人共同經營，支援營運並負責網站與電商。</p>
+          </article>
+          <article class="timeline-item right wow fadeInUp">
+            <div class="timeline-date">2025/5–2025/11｜AI 內容實作</div>
+            <h3>生成式影音實驗</h3>
+            <p>經營個人頻道，實測 AI 影音工具與市場回應。</p>
+          </article>
+          <article class="timeline-item wow fadeInUp">
+            <div class="timeline-date">2026/3–2026/8｜獨立 SaaS</div>
+            <h3>MiniEats、Manufacture AI、Akashic Navi</h3>
+            <p>以 AI 協作於半年內將三套系統開發至可操作狀態，並持續補強讀碼與基礎。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="s05" class="section-pad section-iron">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="eyebrow wow fadeInUp">WORKING RULES</span>
+          <h2 class="section-title wow fadeInUp">工作原則 <small>NOT SLOGANS</small></h2>
+          <p class="section-sub mx-auto wow fadeInUp">這三條是我用來篩選工作的落實規則。</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4 wow fadeInUp">
+            <article class="info-card">
+              <span class="eyebrow">01 / PROBLEM</span>
+              <h3 class="mt-3">先對準問題</h3>
+              <p>釐清使用者是誰、痛點卡在哪、又該如何驗證。先定義清楚範疇再執行，避免盲目堆砌功能。</p>
+              <div class="skill-list"><span class="tag">需求拆解</span><span class="tag">PRD</span></div>
+            </article>
+          </div>
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.12s">
+            <article class="info-card">
+              <span class="eyebrow">02 / SHIP</span>
+              <h3 class="mt-3">做成可驗證的 MVP</h3>
+              <p>具備能被點擊、使用、修改的基礎功能。在拿到真實回饋之前，不將主觀假設視為最終定論。</p>
+              <div class="skill-list"><span class="tag">上線</span><span class="tag">回饋迭代</span></div>
+            </article>
+          </div>
+          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.24s">
+            <article class="info-card">
+              <span class="eyebrow">03 / CROSS</span>
+              <h3 class="mt-3">現場邏輯帶進系統</h3>
+              <p>將報價、菜單、業務架構與成本等實務規則帶入系統。建構流程邏輯的系統，而非徒具虛表的畫面。</p>
+              <div class="skill-list"><span class="tag">DFM</span><span class="tag">作業流</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s14" class="section-pad section-iron">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">我能一起做的事 <small>FIT</small></h2>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 wow fadeInUp">
+            <article class="skill-card">
+              <h3>AI 輔助產品開發</h3>
+              <p class="note mb-0">將需求轉化為系統功能，快速交付可點擊、可修改的原型產品。</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.08s">
+            <article class="skill-card">
+              <h3>企劃與 PRD</h3>
+              <p class="note mb-0">梳理第一線實務現場規則，定義並撰寫出具體可執行的產品需求文件。</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.16s">
+            <article class="skill-card">
+              <h3>跨領域整合</h3>
+              <p class="note mb-0">運用機構與製造業背景，協助實體傳統業務與數位系統流程的對接。</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.24s">
+            <article class="skill-card">
+              <h3>MVP 驗證</h3>
+              <p class="note mb-0">透過最小可行性產品（MVP）投入實際市場驗證，以真實回饋評估後續規模化。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s15">
+      <div class="row g-0">
+        <div class="col-md-6 split-panel bg-img" style="background-image: url('images/engineer-desk.webp');">
+          <div class="split-card wow fadeInUp">
+            <h2>未來願景</h2>
+            <small class="eyebrow">PRODUCTS THAT HOLD</small>
+            <p class="mt-3">持續把第一線作業流做成可用工具。深化前端與資料結構，讓 AI 協作的產出具備良好的可維護性。</p>
+            <ul>
+              <li>真實作業流 → 可上線系統</li>
+              <li>補齊測試、權限管理與資料模型</li>
+              <li>只保留被使用過的核心功能</li>
+            </ul>
+            <a href="#s08" class="btn-ghost">回到作品</a>
+          </div>
+        </div>
+        <div class="col-md-6 split-panel bg-img" style="background-image: url('images/code-dark.webp');">
+          <div class="split-card wow fadeInUp" data-wow-delay="0.12s">
+            <h2>職涯下一步</h2>
+            <small class="eyebrow">TRAINING + BUILD</small>
+            <p class="mt-3">透過職訓持續補強讀碼能力、程式基礎與全端開發觀念，讓 AI 協作的產出看得懂、改得動。</p>
+            <ul>
+              <li>HTML / CSS / JavaScript 基礎深化</li>
+              <li>前後端串接與資料庫架構觀念</li>
+              <li>維持獨立思考與產品決策能力</li>
+            </ul>
+            <a href="#s16" class="btn-ghost">聯絡我</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s16" class="section-pad">
+      <div class="container">
+        <h2 class="section-title text-center wow fadeInUp">聯絡 <small>CONTACT</small></h2>
+        <p class="section-sub mx-auto text-center wow fadeInUp">台中市西區 ｜ 電話聯絡時段：09:00 - 19:00（信件隨時歡迎）
+        </p>
+        <div class="row g-4">
+          <div class="col-md-12 wow fadeInLeft">
+            <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact">
+              <p class="d-none"><label>請勿填寫 <input name="bot-field"></label></p>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="cName" name="name" placeholder="姓名" required>
+                <label for="cName">姓名</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="cEmail" name="email" placeholder="Email" required>
+                <label for="cEmail">電子信箱</label>
+              </div>
+              <select class="form-select form-select-lg mb-3" id="cTopic" name="topic" required>
+                <option value="" selected disabled>---聯絡主題---</option>
+                <option>面試邀約</option>
+                <option>專案討論</option>
+                <option>MVP 合作</option>
+                <option>其他</option>
+              </select>
+              <textarea class="form-control mb-3" rows="7" id="cMsg" name="message" placeholder="請輸入訊息內容" required></textarea>
+              <p class="form-status note d-none" role="status"></p>
+              <div class="text-end">
+                <button type="reset" class="btn-ghost me-2">取消</button>
+                <button type="submit" class="btn-copper">送出</button>
+              </div>
+            </form>
+            <p class="note mt-3">Email：<a href="mailto:lvoetp@gmail.com">lvoetp@gmail.com</a>　電話：0917-866-799</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <p class="mb-2 mb-lg-0">© 2026 Chen Kai Dong (Bruce). </p>
+      <p class="mb-0">
+        <a href="https://github.com/lvoetp-arch" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+        <a href="https://drive.google.com/file/d/11XJMsGsIpt_iseUFf8ZtJMSpI4IyuUnE/view?usp=drive_link" target="_blank"
+          rel="noopener noreferrer">靜態作品集</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- modal 彈框部分 -->
+  <div class="modal fade project-modal" id="modalMiniEats" tabindex="-1" aria-labelledby="modalMiniEatsTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="project-banner w-100">
+            <span class="eyebrow">LIVE PRODUCT</span>
+            <h3 id="modalMiniEatsTitle">MiniEats｜小店掃碼點餐平台</h3>
+          </div>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="關閉"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>MiniEats 是給夜市攤商、小吃店與微型餐飲業者使用的掃碼點餐與店務管理平台。許多小型店家沒有預算導入大型 POS，也難負擔複雜的點餐系統；本專案把「顧客掃碼下單 → 店家看板接單 →
+            取餐通知」做成可直接上線使用的 Web 產品，並用模組化方式逐步加上金流、列印、會員與行銷等功能。</p>
+          <p>顧客端免安裝 App，掃描攤位／桌面 QR Code 或從 LINE LIFF 進入點餐頁；店家後台可維護菜單、營業時間、自動／手動接單，並即時處理訂單。官方 LINE 帳號則以知識檢索（RAG）搭配 Google
+            Gemini 回答常見問題。顧客行動支付與平台訂閱升級皆採用台灣藍新金流。</p>
+
+          <h4 class="content-heading">目前狀態</h4>
+          <div class="metric-row">
+            <div class="metric"><strong>2 家</strong><span>店家實際使用</span></div>
+            <div class="metric"><strong>1000+</strong><span>累積訂單筆數</span></div>
+            <div class="metric"><strong>&lt; NT$1,000</strong><span>目前每月訂閱收入（向店家收取）</span></div>
+          </div>
+          <div class="quote-card">
+            <strong>早期店家回饋</strong>
+            <p>店家表示操作簡單，也肯定提出調整需求後能獲得快速回應。</p>
+          </div>
+
+          <h4 class="content-heading">目前已做到的範圍</h4>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <p>QR／LIFF 點餐：免安裝 App；另有 kiosk 等點餐入口</p>
+            </div>
+            <div class="feature-item">
+              <p>菜單管理：分類、品項、加料／屬性、圖片；支援 Excel 匯入匯出與拖曳排序</p>
+            </div>
+            <div class="feature-item">
+              <p>訂單看板：自動／手動接單、營業時間排程與接單開關、備餐時間與狀態流轉</p>
+            </div>
+            <div class="feature-item">
+              <p>金流與通知：藍新線上付款、Web Push 新單／取餐提醒</p>
+            </div>
+            <div class="feature-item">
+              <p>營運報表、會員相關模組，以及可選的收據／杯貼列印</p>
+            </div>
+            <div class="feature-item">
+              <p>官方 LINE 智慧問答：知識檢索（RAG）＋ Gemini 回覆常見問題</p>
+            </div>
+            <div class="feature-item">
+              <p>說明文件、示範店與平台後台，方便導入與日常維運</p>
+            </div>
+          </div>
+
+          <h4 class="content-heading">我的參與</h4>
+          <p>負責產品構想、需求規劃、PRD 迭代、UI/UX、功能拆解、AI 輔助開發、測試、部署與後續營運。本專案為獨立開發，著重將小店真實作業流轉化為可用產品，並依據店家回饋持續調整優化優先順序。</p>
+
+          <h4 class="content-heading">開發與營運歷程</h4>
+          <div class="project-highlights">
+            <ul>
+              <li><strong>高效時程管理：</strong>從構想到上線約 1 個月，核心功能目前皆穩定運作</li>
+              <li><strong>敏捷產品迭代：</strong>依市場與店家需求迭代，優先交付核心價值並規劃後續功能藍圖。</li>
+              <li><strong>資安防護機制：</strong>定期檢視安全性，並針對潛在漏洞即時修補。</li>
+              <li><strong>營運發展階段：</strong>2 家店實際使用並付費，持續累積使用規模並探索收入模式</li>
+            </ul>
+          </div>
+
+          <h4 class="content-heading">後續規劃</h4>
+          <ul>
+            <li>持續依實際使用回饋，優化接單、菜單與通知流程。</li>
+            <li>累積更多店家驗證，補強收入模式並導入優化體驗。</li>
+            <li>採逐步完善功能模組策略，確保系統穩定度。</li>
+          </ul>
+
+          <h4 class="content-heading">技術棧 Tech Stack</h4>
+          <div class="table-wrap">
+            <table class="stack-table">
+              <thead>
+                <tr>
+                  <th>類別</th>
+                  <th>使用技術</th>
+                  <th>用途說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>前端</td>
+                  <td>Next.js 16（App Router）＋ React 19／TypeScript／Tailwind</td>
+                  <td>顧客點餐頁、店家後台、行銷與說明頁</td>
+                </tr>
+                <tr>
+                  <td>後端／資料庫</td>
+                  <td>Railway＋Supabase（PostgreSQL＋Auth＋Storage）</td>
+                  <td>菜單、訂單、會員與檔案；身分驗證與資料存取</td>
+                </tr>
+                <tr>
+                  <td>AI</td>
+                  <td>Google Gemini＋RAG</td>
+                  <td>官方 LINE 智慧問答；另用於菜單翻譯／OCR 等輔助流程</td>
+                </tr>
+                <tr>
+                  <td>通訊整合</td>
+                  <td>LINE 官方帳號、LINE LIFF</td>
+                  <td>官方帳號客服、店家 LINE 模組與掃碼／LINE 內點餐</td>
+                </tr>
+                <tr>
+                  <td>掃碼點餐</td>
+                  <td>QR Code</td>
+                  <td>顧客掃描桌面或攤位 QR 直接進入點餐頁</td>
+                </tr>
+                <tr>
+                  <td>金流</td>
+                  <td>藍新 NewebPay</td>
+                  <td>顧客線上付款；平台 SaaS 訂閱升級（依需求申請）</td>
+                </tr>
+                <tr>
+                  <td>通知</td>
+                  <td>Web Push</td>
+                  <td>店家新單提醒、顧客取餐等推播通知</td>
+                </tr>
+                <tr>
+                  <td>週邊硬體</td>
+                  <td>ESC/POS 收據、Niimbot 藍牙杯貼</td>
+                  <td>可選的出單／標籤列印，依店家設備啟用</td>
+                </tr>
+                <tr>
+                  <td>網路／部署</td>
+                  <td>Railway＋Cloudflare</td>
+                  <td>Railway 負責應用程式託管；Cloudflare 負責網域、CDN 快取與安全防護</td>
+                </tr>
+                <tr>
+                  <td>開發方式</td>
+                  <td>AI 協作</td>
+                  <td>•
+                    • 以 AI 討論 PRD、拆解功能、實作與除錯，並自行負責產品決策與線上維運。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">以上數據與首頁一致，為早期驗證階段之真實狀況。技術棧依本專案原始碼與線上可公開辨識之技術整理；列印、部分模組與金流細節依店家設定啟用。</p>
+          <p class="note">技術棧依本專案原始碼與線上可公開辨識之技術整理；列印、部分模組與金流細節依店家設定啟用。</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost" data-bs-dismiss="modal">關閉</button>
+          <a class="btn-copper" href="https://www.minieats.tw" target="_blank" rel="noopener noreferrer">造訪 MiniEats 網站
+            ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade project-modal" id="modalManufacture" tabindex="-1" aria-labelledby="modalManufactureTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="project-banner w-100 shift-steel">
+            <span class="eyebrow">ON HOLD</span>
+            <h3 id="modalManufactureTitle">Manufacture AI｜B2B AI 報價與營運系統</h3>
+          </div>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="關閉"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>Manufacture AI 是專為台灣製造業貿易商設計的 B2B AI 報價與營運系統。傳統報價流程需頻繁對照材料、製程、圖紙並與工廠反覆確認，耗費大量時間。本專案將此作業流程轉化為 Web
+            產品，整合詢價整理、AI 輔助估價、中文報價 PDF 生成，以及客戶/工廠主檔、訂單、採購與應收應付管理。</p>
+          <p>估價流程以資料庫的材質密度與製程費率計算出成本底價，再搭配圖紙或 STEP 檔案，由 AI 補充風險說明。系統堅持以結構化數據計算為準，避免完全由大型語言模型生成數字。免費方案設有每月 AI
+            報價次數限制，升級訂閱則對接藍新金流。</p>
+
+          <h4 class="content-heading">目前已做到的範圍</h4>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <p>RFQ 收件匣：手動新增，或由 Gmail 同步後人工確認再進估價</p>
+            </div>
+            <div class="feature-item">
+              <p>AI 報價：規格＋可選圖紙／STEP → 成本表底價＋AI 風險建議 → 寫入報價紀錄</p>
+            </div>
+            <div class="feature-item">
+              <p>中文 PDF 報價單下載；可再向工廠發詢價，簽回後調整最終售價</p>
+            </div>
+            <div class="feature-item">
+              <p>主檔與營運：客戶、工廠、品項、銷售訂單、採購、應收／應付</p>
+            </div>
+            <div class="feature-item">
+              <p>訂閱方案：Free／Pro（台灣路徑以藍新為主）</p>
+            </div>
+          </div>
+
+          <h4 class="content-heading">我的參與</h4>
+          <p>以製造業背景定義報價與接單痛點，整理材質與製程的知識結構，並透過 AI 協作完成前後端架構與部署。本專案由個人獨立開發完成，著重於將真實作業流轉化為可用產品，並以核心業務邏輯的落地為主要目標。</p>
+
+          <h4 class="content-heading">若恢復開發</h4>
+          <ul>
+            <li>收集實際使用回饋，再補具體成果與改進方向</li>
+            <li>依需求補強流程銜接（例如報價與訂單之間的操作效率）</li>
+            <li>英文版金流等次要路徑視需要再整理</li>
+          </ul>
+
+          <h4 class="content-heading">技術棧 Tech Stack</h4>
+          <div class="table-wrap">
+            <table class="stack-table">
+              <thead>
+                <tr>
+                  <th>類別</th>
+                  <th>使用技術</th>
+                  <th>用途說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>前端</td>
+                  <td>Next.js 14（App Router）＋ React／TypeScript／Tailwind</td>
+                  <td>登入後的 Web 介面與行銷落地頁</td>
+                </tr>
+                <tr>
+                  <td>後端</td>
+                  <td>FastAPI（Python）</td>
+                  <td>REST API、檔案上傳、估價與業務流程</td>
+                </tr>
+                <tr>
+                  <td>資料庫／儲存</td>
+                  <td>Supabase（PostgreSQL＋Storage）</td>
+                  <td>業務資料與郵件附件管理；整合 Supabase Auth 與 JWT 身分驗證</td>
+                </tr>
+                <tr>
+                  <td>AI</td>
+                  <td>Google Gemini</td>
+                  <td>圖紙解讀、信件規格萃取、報價風險說明</td>
+                </tr>
+                <tr>
+                  <td>CAD</td>
+                  <td>CadQuery（STEP）</td>
+                  <td>解析 3D 體積、外框與孔位等幾何資訊</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>Gmail OAuth（唯讀）</td>
+                  <td>同步詢價信件，經 AI 提取關鍵資訊後由人工確認並建立 RFQ</td>
+                </tr>
+                <tr>
+                  <td>文件</td>
+                  <td>ReportLab</td>
+                  <td>產出繁體中文報價單／採購單 PDF</td>
+                </tr>
+                <tr>
+                  <td>金流</td>
+                  <td>藍新 NewebPay（主）；Stripe（保留）</td>
+                  <td>SaaS 訂閱升級；客戶貨款走財務模組，分開處理</td>
+                </tr>
+                <tr>
+                  <td>部署</td>
+                  <td>前端 Netlify、後端 Railway</td>
+                  <td>前後端分離託管</td>
+                </tr>
+                <tr>
+                  <td>開發方式</td>
+                  <td>AI 協作（vibe coding）</td>
+                  <td>AI 協作開發：以製造業背景定義需求與流程，並與 AI 協作完成系統架構與實作</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">基本功能開發完成後，因報價資料庫需長期累積、單人難以持續，目前暫緩。</p>
+          <p class="note">技術棧依本專案原始碼與線上公開版本整理；金流主路徑採用藍新金流。</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost" data-bs-dismiss="modal">關閉</button>
+          <a class="btn-copper" href="https://app.akashicnavi.com/login" target="_blank" rel="noopener noreferrer">註冊試用
+            Manufacture AI ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade project-modal" id="modalAkashic" tabindex="-1" aria-labelledby="modalAkashicTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="project-banner w-100 shift-patina">
+            <span class="eyebrow">PERSONAL PROJECT</span>
+            <h3 id="modalAkashicTitle">Akashic Navi｜個人資料分析工具</h3>
+          </div>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"
+            aria-label="關閉"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p>Akashic Navi（靈魂法典）是把多套個人資料分析系統整合成為一份可閱讀報告的 Web
+            產品。使用者輸入出生時間、地點與當下關注議題後，後端會先用專業運算庫算出八字、紫微、西洋占星、吠陀、生命靈數與人類圖等結構化資料，再交給 AI
+            以「自我引導」語氣寫成現代、具心理學深度的解讀，由後端邏輯限制模型生成範圍，確保輸出品質。</p>
+          <p>產品採免費 / 付費分層：免費層可看基礎分析與頻率分數；付費解鎖完整報告與 PDF（目前約 NT$399，金流走台灣藍新）。為避免濫用，分析請求會搭配 IP 與瀏覽器指紋做限流。前端支援繁中 / 簡中 / 英文 /
+            日文，為完整實作多條條件規則、跨語言介面與付費流整合成型之產品。</p>
+
+          <h4 class="content-heading">目前已做到的範圍</h4>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <p>分析表單：姓名、出生日時、性別、國家／城市、生命階段、關注焦點與痛點</p>
+            </div>
+            <div class="feature-item">
+              <p>多系統運算：後端先產出結構化盤面與交叉標籤，再交 AI 寫解讀</p>
+            </div>
+            <div class="feature-item">
+              <p>報告分層：免費基礎內容；付費解鎖深度章節與完整報告</p>
+            </div>
+            <div class="feature-item">
+              <p>藍新金流解鎖流程：建立訂單 → 導向付款 → 回寫後解鎖內容</p>
+            </div>
+            <div class="feature-item">
+              <p>多語系介面與報告語氣；晶石／能量相關建議等延伸模組</p>
+            </div>
+            <div class="feature-item">
+              <p>免費額度限流（IP＋瀏覽器指紋），降低濫用成本</p>
+            </div>
+          </div>
+
+          <h4 class="content-heading">我的參與</h4>
+          <p>負責產品定位、分析流程與免費/付費邊界設計，整理多系統資料如何導入 AI、以及提示詞與輸出語規規範；並透過 AI 協作完成前後端、金流與部署。本專案著重於將複雜業務規則轉化為可用產品，並落實全端架構驗證。</p>
+
+          <h4 class="content-heading">後續規劃</h4>
+          <ul>
+            <li>依實際使用回饋調整報告可讀性與付費章節切分</li>
+            <li>補強報告保存、重看與分享等帳號側體驗</li>
+            <li>視需求擴大地點自動定位覆蓋範圍與次要金流路徑整理</li>
+          </ul>
+
+          <h4 class="content-heading">技術棧 Tech Stack</h4>
+          <div class="table-wrap">
+            <table class="stack-table">
+              <thead>
+                <tr>
+                  <th>類別</th>
+                  <th>使用技術</th>
+                  <th>用途說明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>前端</td>
+                  <td>Next.js 15（App Router）＋ React／TypeScript／Tailwind</td>
+                  <td>分析表單、報告呈現與多語系介面</td>
+                </tr>
+                <tr>
+                  <td>互動／視覺</td>
+                  <td>Framer Motion、Three.js</td>
+                  <td>載入與報告區的動效、氛圍視覺</td>
+                </tr>
+                <tr>
+                  <td>多語系</td>
+                  <td>next-intl（繁中／簡中／EN／日本語）</td>
+                  <td>介面與 SEO 文案在地化</td>
+                </tr>
+                <tr>
+                  <td>後端</td>
+                  <td>FastAPI（Python）</td>
+                  <td>分析 API、付費解鎖、限流與報表流程</td>
+                </tr>
+                <tr>
+                  <td>資料庫／帳號</td>
+                  <td>Supabase（PostgreSQL）</td>
+                  <td>訂單、評分與後續報告持久化</td>
+                </tr>
+                <tr>
+                  <td>傳統命理運算</td>
+                  <td>lunar-python、iztro-py（＋ Node 子程序）</td>
+                  <td>四柱八字、紫微斗數等結構化盤面</td>
+                </tr>
+                <tr>
+                  <td>占星／其他系統</td>
+                  <td>pyswisseph、ephem 等</td>
+                  <td>西洋占星、吠陀、靈數、人類圖等資料層</td>
+                </tr>
+                <tr>
+                  <td>AI</td>
+                  <td>Google Gemini 2.5 Flash</td>
+                  <td>依後端預先算好的標籤與交叉結論撰寫解讀</td>
+                </tr>
+                <tr>
+                  <td>地點／時區</td>
+                  <td>內建城市座標＋ geopy／timezonefinder</td>
+                  <td>由城市帶出經緯度與時區，降低手動填錯</td>
+                </tr>
+                <tr>
+                  <td>限流</td>
+                  <td>FingerprintJS＋IP</td>
+                  <td>免費分析次數控管，付費解鎖後略過</td>
+                </tr>
+                <tr>
+                  <td>文件</td>
+                  <td>ReportLab／前端 PDF 相關元件</td>
+                  <td>產出可下載的完整報告</td>
+                </tr>
+                <tr>
+                  <td>金流</td>
+                  <td>藍新 NewebPay（主）；Stripe（程式保留）</td>
+                  <td>付費解鎖完整報告</td>
+                </tr>
+                <tr>
+                  <td>部署</td>
+                  <td>前端 Netlify、後端 Railway</td>
+                  <td>前後端分離託管</td>
+                </tr>
+                <tr>
+                  <td>開發方式</td>
+                  <td>AI 協作開發</td>
+                  <td>以產品流程與規則定義為主，運用 AI 協助架構生成與程式碼實作。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">本專案以技術架構實作與多系統整合驗證為主。</p>
+          <p class="note">技術棧依本專案原始碼與線上可公開辨識之技術整理；金流主路徑為藍新。</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-ghost" data-bs-dismiss="modal">關閉</button>
+          <a class="btn-copper" href="https://www.akashicnavi.com" target="_blank" rel="noopener noreferrer">造訪 Akashic
+            Navi 網站 ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+  <script>
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    document.querySelectorAll("#consultForm, #contactForm").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const status = form.querySelector(".form-status");
+        const show = (msg) => {
+          if (status) {
+            status.textContent = msg;
+            status.classList.remove("d-none");
+          }
+        };
+        try {
+          const res = await fetch("/", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: new URLSearchParams(new FormData(form)).toString(),
+          });
+          if (!res.ok) throw new Error(res.status);
+          show("已收到您的訊息，我會盡快回覆。");
+          const modal = form.closest(".modal");
+          window.setTimeout(() => {
+            if (modal && window.bootstrap) {
+              window.bootstrap.Modal.getOrCreateInstance(modal).hide();
+            }
+            form.reset();
+            status?.classList.add("d-none");
+          }, 1500);
+        } catch (err) {
+          show("送出失敗，請改寄信至 lvoetp@gmail.com");
+        }
+      });
+    });
+
+    if (!reduceMotion && window.WOW) {
+      new WOW({boxClass: "wow", animateClass: "animated", offset: 60, mobile: true, live: false}).init();
+      const revealOnJump = () => window.dispatchEvent(new Event("scroll"));
+      window.addEventListener("hashchange", revealOnJump);
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", () => window.setTimeout(revealOnJump, 280));
+      });
+      window.setTimeout(revealOnJump, 200);
+    }
+
+    if (window.counterUp) {
+      const counterUp = window.counterUp.default;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting && !el.classList.contains("is-visible")) {
+            counterUp(el, {duration: 1400, delay: 16});
+            el.classList.add("is-visible");
+          }
+        });
+      }, {threshold: 0.6});
+      document.querySelectorAll(".counter01, .counter02, .counter03, .counter04").forEach((el) => io.observe(el));
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+圖片來源（免費授權）
+Unsplash License：https://unsplash.com/license
+Pixabay Content License：https://pixabay.com/service/license-summary/
+
+說明：
+- 「原圖」是 images.unsplash.com 網址，瀏覽器可直接開出照片。
+- 「作品頁」是 Unsplash 網頁；格式必須是 /photos/英文描述-照片ID，
+  舊的 /photos/photo-數字 會 404。
+
+workshop-tools.jpg　焊接　Christopher Burns
+原圖：https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1
+作品頁：https://unsplash.com/photos/man-using-welding-machine-Wiu3w-99tNg
+
+workshop-interior.jpg　工廠現場　Zoshua Colah
+原圖：https://images.unsplash.com/photo-1764115424769-ebdd2683d5a8
+作品頁：https://unsplash.com/photos/industrial-workshop-with-machinery-and-fans-MkkKNtS8fYQ
+
+lathe-swarf.jpg　車床與金屬屑　Zoshua Colah
+原圖：https://images.unsplash.com/photo-1764114441005-df7e660bc2c8
+作品頁：https://unsplash.com/photos/old-industrial-lathe-machine-with-metal-shavings-G_XmzeIiwMY
+
+laser-cut.jpg　雷射切割　Cemrecan Yurtman
+原圖：https://images.unsplash.com/photo-1738162837627-5794e6563cac
+作品頁：https://unsplash.com/photos/a-large-metal-sculpture-inside-of-a-building--9LSGhickV0
+
+factory-pipes.jpg　管路與機具　Crystal Kwok
+原圖：https://images.unsplash.com/photo-1513828583688-c52646db42da
+作品頁：https://unsplash.com/photos/gray-commercial-machine-XUEdfpPIhXg
+
+machining.jpg　工程圖與卡尺　ThisisEngineering
+原圖：https://images.unsplash.com/photo-1581092160562-40aa08e78837
+作品頁：https://unsplash.com/photos/pessoa-segurando-papel-de-impressora-branco-WDCE0T4khsE
+簡短頁：https://unsplash.com/photos/WDCE0T4khsE
+
+engineer-desk.jpg　電路維修　ThisisEngineering
+原圖：https://images.unsplash.com/photo-1581092918056-0c4c3acd3789
+作品頁：https://unsplash.com/photos/person-holding-green-and-black-circuit-board-32PpagSzeGs
+
+planning-desk.jpg　筆電與手繪　Scott Graham
+原圖：https://images.unsplash.com/photo-1454165804606-c3d57bc86b40
+作品頁：https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA
+
+casual-table.jpg　餐桌（MiniEats 輪播）
+原圖：https://images.unsplash.com/photo-1466978913421-dad2ebd01d17
+
+glass-drink.jpg　杯飲　Ash Edmonds
+原圖：https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b
+作品頁：https://unsplash.com/photos/clear-glass-tumbler-on-brown-wooden-tray-fsI-_MRsic0
+
+code-dark.jpg　程式畫面　Pixabay
+作品頁：https://pixabay.com/photos/code-coding-computer-data-1839406/
+備援頁：https://pixabay.com/photos/code-html-digital-coding-1839406/
