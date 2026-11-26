@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH8-表單-CRUD練習｜總務耗材與請購管理</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/myall-css.css">
+    <!-- Font Awesome 圖示（CDN）；若要離線使用可改成本機檔案 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 後台主題樣式（含表格 RWD 卡片樣式，原本寫在這裡的 <style> 已移到 admin-theme.css） -->
+    <link rel="stylesheet" href="./CSS/admin-theme.css">
+</head>
+
+<body>
+    <!-- 導覽列（保留原本連結與結構，只調整品牌名稱與樣式） -->
+    <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-boxes-stacked"></i>總務耗材與請購管理</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="20261110-ch8-forms-CRUD-C.html"><i
+                                class="fa-solid fa-file-circle-plus"></i>產品建檔</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="20261110-ch8-forms-CRUD-R.html"><i
+                                class="fa-solid fa-table-list"></i>產品列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <!-- 麵包屑 + 頁面標題 + 功能說明 -->
+        <nav aria-label="breadcrumb" class="app-breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                <li class="breadcrumb-item"><a href="#">耗材管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">耗材列表</li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+            <div class="page-header">
+                <h1>耗材與事務用品列表</h1>
+                <p>核對目前品項、單價與庫存，低庫存品項會以紅色標示，方便行政人員判斷是否需要請購。</p>
+            </div>
+            <a class="btn btn-app-primary" href="20261110-ch8-forms-CRUD-C.html"><i class="fa-solid fa-plus"></i>產品建檔</a>
+        </div>
+
+        <!-- 統計資訊卡片：數字由 JavaScript 依 API 資料計算，載入前顯示 -- -->
+        <div class="row g-3 mb-4">
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div>
+                        <div class="stat-label">品項總數</div>
+                        <div class="stat-value" id="stat-count">--</div>
+                        <div class="stat-note">目前登錄的品項</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                    <div>
+                        <div class="stat-label">庫存總量</div>
+                        <div class="stat-value" id="stat-num">--</div>
+                        <div class="stat-note">所有品項庫存數量加總</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+                    <div>
+                        <div class="stat-label">庫存總金額</div>
+                        <div class="stat-value" id="stat-amount">--</div>
+                        <div class="stat-note">單價 × 庫存數量</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div class="stat-card stat-warn">
+                    <div class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div>
+                        <div class="stat-label">低庫存品項</div>
+                        <div class="stat-value" id="stat-low">--</div>
+                        <div class="stat-note">庫存 <span id="stat-low-limit">--</span> 件以下（含）</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card app-card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div class="card-title-text"><i class="fa-solid fa-table-list"></i>產品列表</div>
+                        <span class="load-status" id="load-status">等待 API 資料</span>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-app table-rwd">
+                            <thead>
+                                <tr>
+                                    <th width="15%">產品名稱</th>
+                                    <th width="13%" class="text-end">產品價格</th>
+                                    <th width="20%" class="text-end">產品數量</th>
+                                    <th width="15%">產品分類</th>
+                                    <th width="15%">產品備註</th>
+                                    <th width="15%">#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mytbody">
+                                <!-- 資料由 showdata() 依 API 結果產生；取得前只顯示這一列提示 -->
+                                <tr>
+                                    <td colspan="6" class="text-center text-muted py-4" id="load-msg">正在讀取產品資料...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- 庫存顏色說明 -->
+                        <div class="table-note mt-3">
+                            <i class="fa-solid fa-circle-info me-1"></i>庫存狀態：
+                            <span class="badge badge-stock badge-stock-low">需請購</span> 20 以下　
+                            <span class="badge badge-stock badge-stock-mid">庫存尚可</span> 21–50　
+                            <span class="badge badge-stock badge-stock-ok">庫存充足</span> 51 以上
+                        </div>
+
+                        <!-- 頁碼 -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center" id="pageList">
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- updateModal -->
+    <div class="modal fade app-modal" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="fa-solid fa-pen-to-square"></i>產品更新</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 唯讀欄位：名稱、分類、備註 -->
+                    <div class="mb-3 form-floating">
+                        <input type="text" class="form-control form-control-lg" placeholder="" id="pname" disabled
+                            value="">
+                        <label for="pname" class="form-label">產品名稱(字數2-6字數)
+                            <span class="field-tag field-tag-lock"><i class="fa-solid fa-lock me-1"></i>唯讀</span></label>
+                    </div>
+
+                    <!-- 可編輯欄位：價格、數量 -->
+                    <div class="mb-3">
+                        <label for="price" class="form-label">價格(1-100)
+                            <span class="field-tag field-tag-edit"><i class="fa-solid fa-pen me-1"></i>可修改</span></label>
+                        <input type="number" class="form-control form-control-lg" id="price" min="1" max="100"
+                            value="50">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="num" class="form-label">數量: <span class="range-value"
+                                id="num-text">50</span> 個
+                            <span class="field-tag field-tag-edit"><i class="fa-solid fa-pen me-1"></i>可修改</span></label>
+                        <input type="range" class="form-range" min="1" max="100" step="1" value="50" id="num">
+                        <div class="d-flex justify-content-between range-scale">
+                            <span class="fw-bold">1</span>
+                            <span class="fw-bold">100</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="category" class="form-label">產品分類
+                            <span class="field-tag field-tag-lock"><i class="fa-solid fa-lock me-1"></i>唯讀</span></label>
+                        <select name="" id="category" class="form-select form-select-lg">
+                            <option value="" class="text-center" disabled>---產品分類---</option>
+                            <option value="事務用品" disabled selected>事務用品</option>
+                            <option value="清潔耗材" disabled>清潔耗材</option>
+                            <option value="茶水間補貨" disabled>茶水間補貨</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="remark" class="form-label">備註
+                            <span class="field-tag field-tag-lock"><i class="fa-solid fa-lock me-1"></i>唯讀</span></label>
+                        <textarea disabled id="remark" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-app-cancel" data-bs-dismiss="modal"><i
+                            class="fa-solid fa-xmark"></i>取消</button>
+                    <button type="button" class="btn btn-app-primary"><i class="fa-solid fa-check"></i>確認更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // 以下為原本的 JavaScript；新增部分都有標註「【新增】」，只負責畫面呈現與統計
+        const pageSize = 5;
+        let page = 1;
+        let productData = []; //儲存API取得的所有資料
+
+        const lowStockLimit = 20;       // 【新增】庫存 20 以下視為低庫存（需請購）
+        const midStockLimit = 50;       // 【新增】庫存 21~50 為庫存尚可
+        const SWAL_COLOR = "#2f7f79";   // 【新增】SweetAlert2 確認鈕顏色（對應 --app-teal）
+
+        $(function () {
+            //取得資料  GET API
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:3000/product",
+                dataType: "json",
+                success: showdata,
+                error: function () {
+                    //【新增】讓畫面上的提示同步反映失敗狀態
+                    $("#load-status").text("無法連接 API");
+                    $("#load-msg").text("讀取失敗，請確認後端 API 已啟動。");
+
+                    Swal.fire({
+                        title: "讀取失敗",
+                        text: "無法連接後端API。",
+                        icon: "error",
+                        confirmButtonColor: SWAL_COLOR
+                    });
+                }
+            });
+
+            //監聽點擊頁碼
+            $("#pageList").on("click", ".page-link", function () {
+                console.log($(this).data("page"));
+                page = Number($(this).data("page"));
+
+                //重新顯示畫面
+                showdata(productData);
+            });
+
+            //監聽更新按鈕
+            $("#mytbody").on("click", ".btn-update", function () {
+                console.log($(this).data("id"));
+                const id = $(this).data("id");
+
+                //傳遞至後端API 取得資料
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:3000/product/" + id,
+                    dataType: "json",
+                    success: showUpdateData,
+                    error: function () {
+                        Swal.fire({
+                            title: "讀取失敗",
+                            text: "無法連接後端API。",
+                            icon: "error",
+                            confirmButtonColor: SWAL_COLOR
+                        });
+                    }
+                });
+            });
+
+            //監聽產品數量range
+            $("#num").on("input", function(){
+                $("#num-text").text($(this).val());
+            });
+        });
+
+        // 【新增】依分類回傳 Badge 的 class（顏色定義在 admin-theme.css）
+        function getCategoryClass(category) {
+            if (category === "事務用品") return "badge-cat-office";
+            if (category === "清潔耗材") return "badge-cat-clean";
+            if (category === "茶水間補貨") return "badge-cat-pantry";
+            return "badge-cat-other";
+        }
+
+        // 【新增】依庫存數量回傳狀態文字與顏色 class
+        function getStockInfo(num) {
+            num = Number(num);
+            if (num <= lowStockLimit) return { text: "需請購", cls: "low" };
+            if (num <= midStockLimit) return { text: "庫存尚可", cls: "mid" };
+            return { text: "庫存充足", cls: "ok" };
+        }
+
+        // 【新增】金額格式：NT$ 加千分位
+        function formatMoney(value) {
+            return "NT$ " + Number(value).toLocaleString("zh-TW");
+        }
+
+        // 【新增】依 API 取得的「全部資料」計算統計卡片
+        function updateStats(data) {
+            let totalNum = 0;
+            let totalAmount = 0;
+            let lowCount = 0;
+
+            data.forEach(function (item) {
+                totalNum += Number(item.num);
+                totalAmount += Number(item.price) * Number(item.num);
+                if (Number(item.num) <= lowStockLimit) {
+                    lowCount++;
+                }
+            });
+
+            $("#stat-count").text(data.length);
+            $("#stat-num").text(totalNum.toLocaleString("zh-TW"));
+            $("#stat-amount").text(formatMoney(totalAmount));
+            $("#stat-low").text(lowCount);
+            $("#stat-low-limit").text(lowStockLimit);
+            $("#load-status").text("共 " + data.length + " 筆資料");
+        }
+
+        function showdata(data) {
+            console.log(data);
+            productData = data;
+
+            //【新增】更新統計卡片
+            updateStats(data);
+
+            //分頁
+            const pageData = pagination(data, pageSize, page);
+
+            $("#mytbody").empty();
+            pageData.forEach(function (item) {
+                const stock = getStockInfo(item.num);
+
+                let srtHTML = `<tr>
+                                    <td data-th="產品名稱" class="fw-bold">${item.name}</td>
+                                    <td data-th="產品價格" class="text-end">${formatMoney(item.price)}</td>
+                                    <td data-th="產品數量" class="text-end"><span class="stock-num stock-${stock.cls}">${item.num}</span><span class="badge badge-stock badge-stock-${stock.cls}">${stock.text}</span></td>
+                                    <td data-th="產品分類"><span class="badge badge-cat ${getCategoryClass(item.category)}">${item.category}</span></td>
+                                    <td data-th="產品備註">${item.remark}</td>
+                                    <td data-th="功能">
+                                        <button class="btn btn-sm btn-act btn-edit btn-update" data-bs-toggle="modal" data-bs-target="#updateModal" data-id="${item.id}"><i class="fa-solid fa-pen-to-square"></i>更新</button>
+                                        <button class="btn btn-sm btn-act btn-delete"><i class="fa-solid fa-trash-can"></i>刪除</button>
+                                    </td>
+                                </tr>`;
+                $("#mytbody").append(srtHTML);
+            });
+
+            //產生頁碼
+            const totalPage = Math.ceil(data.length / pageSize);
+            $("#pageList").empty();
+
+            //上一頁
+            if (page > 1) {
+                $("#pageList").append(`<li class="page-item"><a class="page-link" href="#" data-page="${page - 1}">上一頁</a></li>`);
+            }
+
+            //頁碼
+            for (let i = 1; i <= totalPage; i++) {
+                // if(i === page){
+                //     active = "active"
+                // }else{
+                //     active = ""
+                // }
+
+                //三元運算子
+                let active = (i === page) ? "active" : "";
+
+                let strHTML = `<li class="page-item ${active}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
+                $("#pageList").append(strHTML);
+            }
+
+            //下一頁
+            if (page < totalPage) {
+                $("#pageList").append(`<li class="page-item"><a class="page-link" href="#" data-page="${page + 1}">下一頁</a></li>`);
+            }
+
+        }
+
+        function showUpdateData(data){
+            console.log(data);
+
+            //將資料擺入updateModal
+            $("#pname").val(data.name);
+            $("#price").val(data.price);
+            $("#num").val(data.num)
+            $("#num-text").text(data.num);
+            $("#category").val(data.category);
+            $("#remark").val(data.remark);
+        }
+
+
+
+        function pagination(data, pageSize, page) {
+            const start = (page - 1) * pageSize;
+            const end = start + pageSize;
+
+            return data.slice(start, end);
+        }
+
+    </script>
+</body>
+
+</html>

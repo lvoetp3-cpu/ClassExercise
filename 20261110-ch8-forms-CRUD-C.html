@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH8-表單-CRUD練習｜總務耗材與請購管理</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/myall-css.css">
+    <!-- Font Awesome 圖示（CDN）；若要離線使用可改成本機檔案 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 後台主題樣式：需放在其他 CSS 之後，才能覆蓋預設樣式 -->
+    <link rel="stylesheet" href="./CSS/admin-theme.css">
+</head>
+
+<body>
+    <!-- 導覽列（保留原本連結與結構，只調整品牌名稱與樣式） -->
+    <nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-boxes-stacked"></i>總務耗材與請購管理</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i>首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="20261110-ch8-forms-CRUD-C.html"><i
+                                class="fa-solid fa-file-circle-plus"></i>產品建檔</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="20261110-ch8-forms-CRUD-R.html"><i
+                                class="fa-solid fa-table-list"></i>產品列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <!-- 麵包屑 + 頁面標題 + 功能說明 -->
+                <nav aria-label="breadcrumb" class="app-breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                        <li class="breadcrumb-item"><a href="20261110-ch8-forms-CRUD-R.html">耗材管理</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">耗材建檔</li>
+                    </ol>
+                </nav>
+                <div class="page-header">
+                    <h1>耗材建檔</h1>
+                    <p>新增事務用品、清潔耗材或茶水間補貨品項，送出前會先顯示一次核對畫面。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 mt-3">
+                <div class="card app-card">
+                    <div class="card-header">
+                        <div class="card-title-text"><i class="fa-solid fa-pen-to-square"></i>CH8-表單-CRUD練習-產品建檔</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-section-title"><i class="fa-solid fa-tag me-1"></i>基本資料</div>
+
+                        <div class="mb-3 form-floating">
+                            <input type="text" class="form-control form-control-lg" placeholder="" id="pname">
+                            <label for="pname" class="form-label">產品名稱(字數2-6字數)</label>
+                            <div class="valid-feedback">符合規定</div>
+                            <div class="invalid-feedback">不符合規定</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <select name="" id="category" class="form-select form-select-lg">
+                                <option value="" class="text-center" disabled selected>---產品分類---</option>
+                                <option value="事務用品">事務用品</option>
+                                <option value="清潔耗材">清潔耗材</option>
+                                <option value="茶水間補貨">茶水間補貨</option>
+                            </select>
+                            <div class="valid-feedback">已選擇分類</div>
+                        </div>
+
+                        <div class="form-section-title mt-4"><i class="fa-solid fa-coins me-1"></i>價格與數量</div>
+
+                        <div class="mb-3">
+                            <label for="price" class="form-label">價格(1-100)</label>
+                            <input type="number" class="form-control form-control-lg" id="price" min="1" max="100"
+                                value="50">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="num" class="form-label">數量: <span class="range-value"
+                                    id="num-text">50</span> 個</label>
+                            <input type="range" class="form-range" min="1" max="100" step="1" value="50" id="num">
+                            <div class="d-flex justify-content-between range-scale">
+                                <span class="fw-bold">1</span>
+                                <span class="fw-bold">100</span>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title mt-4"><i class="fa-solid fa-comment-dots me-1"></i>其他說明</div>
+
+                        <div class="mb-3">
+                            <label for="remark" class="form-label">備註</label>
+                            <textarea id="remark" class="form-control" rows="3"
+                                placeholder="產品需注意的事項，字數2-10字數。"></textarea>
+                            <div class="valid-feedback">符合規定</div>
+                            <div class="invalid-feedback">不符合規定</div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-app-cancel"><i class="fa-solid fa-xmark"></i>取消</button>
+                        <button class="btn btn-app-primary" id="ok-btn"><i class="fa-solid fa-check"></i>確認</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 產品建檔資確認 -->
+            <div class="col-lg-8 col-md-10 mt-3 d-none" id="showmsg">
+                <div class="confirm-panel">
+                    <div class="confirm-title"><i class="fa-solid fa-clipboard-check"></i>產品建檔資確認</div>
+                    <div class="confirm-list">
+                        <div class="confirm-row"><span class="confirm-label">產品名稱</span><span class="confirm-value">XXXX</span></div>
+                        <div class="confirm-row"><span class="confirm-label">產品價格</span><span class="confirm-value">XXXX</span></div>
+                        <div class="confirm-row"><span class="confirm-label">產品數量</span><span class="confirm-value">XXXX</span></div>
+                        <div class="confirm-row"><span class="confirm-label">產品分類</span><span class="confirm-value">XXXX</span></div>
+                        <div class="confirm-row"><span class="confirm-label">產品備註</span><span class="confirm-value">XXXX</span></div>
+                    </div>
+                    <button class="btn btn-app-cancel w-100"><i class="fa-solid fa-xmark"></i>取消</button>
+                    <button class="btn btn-app-primary w-100 mt-3"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // 以下 JavaScript 邏輯與原檔相同，僅「確認區的 HTML 字串」與 SweetAlert 配色做視覺調整
+        const SWAL_COLOR = "#2f7f79"; // SweetAlert2 確認鈕顏色（對應 --app-teal）
+
+        let flag_pname = false;
+        let flag_price = true;
+        let flag_category = false;
+        let flag_remark = false;
+        $(function () {
+            //產品名稱
+            $("#pname").on("change", function () {
+                if ($(this).val().length > 1 && $(this).val().length < 7) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_pname = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_pname = false;
+                }
+            });
+
+            //價格
+            $("#price").on("change", function () {
+                if ($(this).val() > 0 && $(this).val() < 101) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_price = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_price = false;
+                }
+            });
+
+            //數量
+            $("#num").on("change", function () {
+                console.log($(this).val());
+                $("#num-text").text($(this).val());
+            });
+
+            //產品分類
+            $("#category").on("change", function () {
+                console.log($(this).val());
+                $(this).addClass("is-valid");
+                flag_category = true;
+            });
+
+            //產品備註
+            $("#remark").on("change", function () {
+                if ($(this).val().length > 1 && $(this).val().length < 11) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_remark = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_remark = false;
+                }
+            });
+
+            //按鈕監聽 #ok-btn
+            $("#ok-btn").on("click", function () {
+                if (flag_pname && flag_price && flag_category && flag_remark) {
+                    $("#showmsg").removeClass("d-none");
+
+                    const pname = $("#pname").val();
+                    const price = $("#price").val();
+                    const num = $("#num").val();
+                    const category = $("#category").val();
+                    const remark = $("#remark").val();
+
+                    // 確認區 HTML：版面改為「標籤／內容」列表，變數與 #send-btn 維持不變
+                    let strHTML = `<div class="confirm-panel">
+                                <div class="confirm-title"><i class="fa-solid fa-clipboard-check"></i>產品建檔資確認</div>
+                                <div class="confirm-list">
+                                    <div class="confirm-row"><span class="confirm-label">產品名稱</span><span class="confirm-value">${pname}</span></div>
+                                    <div class="confirm-row"><span class="confirm-label">產品價格</span><span class="confirm-value">${price}</span></div>
+                                    <div class="confirm-row"><span class="confirm-label">產品數量</span><span class="confirm-value">${num}</span></div>
+                                    <div class="confirm-row"><span class="confirm-label">產品分類</span><span class="confirm-value">${category}</span></div>
+                                    <div class="confirm-row"><span class="confirm-label">產品備註</span><span class="confirm-value">${remark}</span></div>
+                                </div>
+                                <button class="btn btn-app-cancel w-100"><i class="fa-solid fa-xmark"></i>取消</button>
+                                <button class="btn btn-app-primary w-100 mt-3" id="send-btn"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
+                            </div>`;
+                    $("#showmsg").html(strHTML);
+                } else {
+                    Swal.fire({
+                        title: "欄位錯誤!",
+                        text: "欄位錯誤，請修正。",
+                        icon: "error",
+                        confirmButtonColor: SWAL_COLOR
+                    });
+                }
+            });
+
+            //確認送出 #send-btn
+            $("#showmsg").on("click", "#send-btn", function () {
+                //蒐集欄位資料
+                const pname = $("#pname").val();
+                const price = $("#price").val();
+                const num = $("#num").val();
+                const category = $("#category").val();
+                const remark = $("#remark").val();
+
+                //轉成JSON物件
+                const dataJSON = {
+                    "name": pname,
+                    "category": category,
+                    "price": price,
+                    "num": num,
+                    "remark": remark
+                };
+
+                console.log(dataJSON);
+                console.log(JSON.stringify(dataJSON));
+
+                //傳送資料至後端API，執行新增動作
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/product",
+                    dataType: "json",
+                    data: JSON.stringify(dataJSON),
+                    contentType: "application/json",
+                    success: function (data) {
+                        console.log(data)
+                        //新增成功後，考慮介面的流暢度
+                        //sweetalert
+                        Swal.fire({
+                            title: "新增成功",
+                            text: "產品資料已經建立。",
+                            icon: "success",
+                            confirmButtonColor: SWAL_COLOR
+                        });
+
+                        //showmsg 關閉
+                        $("#showmsg").addClass("d-none");
+
+                        //清除欄位
+                        $("#pname").val("");
+                        $("#price").val(50);
+                        $("#num").val(50);
+                        $("#num-text").text(50)
+                        $("#category").val("");
+                        $("#remark").val("");
+
+                        //重設驗證樣式
+                        $("#pname, #price, #category, #remark").removeClass("is-valid is-invalid");
+
+                        //重設旗標
+                        flag_pname = false;
+                        flag_price = true;
+                        flag_category = false;
+                        flag_remark = false;
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "新增失敗",
+                            text: "無法連接後端API。",
+                            icon: "error",
+                            confirmButtonColor: SWAL_COLOR
+                        });
+                    }
+
+                });
+
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

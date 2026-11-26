@@ -1,0 +1,244 @@
+/* ⚠️ 必須放在最上面！告訴瀏覽器去載入思源黑體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+:root {
+    /* 青鳥色系（Bluebird Palette）語意變數 */
+    --runway-black: #0c1a24;            /* 深邃夜羽藍（原漆黑） */
+    --miranda-cream: #eef7f9;           /* 晨空淡青藍（原背景底色） */
+    --vogue-gold-trans: #1d4d62b9;      /* 湖水綠松石（原半透明導覽列） */
+    --couture-espresso: #133344c7;      /* 沉穩深海藍（原按鈕底色） */
+    --cerulean-blue: rgba(255, 183, 3, 0.9); /* 青鳥報喜金黃（原Hover文字） */
+    --editorial-white: #ffffff;         /* 純淨羽毛白（原純白內頁） */
+    --burgundy-red: #0077b6;            /* 幸福青鳥藍（原了解更多按鈕） */
+    --devil-crimson: #005f73;           /* 典雅深青綠（原頁尾底色） */
+    
+    /* 陰影與細節顏色 */
+    --shadow-soft: #0a1b2415;
+    --shadow-glow: #00b4d818;
+    --shadow-dark: #002830;
+    --text-light: aliceblue;
+}
+body{
+    font-family: "Zen Maru Gothic", sans-serif;
+}
+
+.zm-100{
+    font-weight: 100;
+}
+
+.zm-200{
+    font-weight: 200;
+}
+
+
+.zm-300{
+    font-weight: 300;
+}
+
+.zm-400{
+    font-weight: 400;
+}
+
+.zm-500{
+    font-weight: 500;
+}
+
+.zm-600{
+    font-weight: 600;
+}
+
+
+
+.zm-700{
+    font-weight: 700;
+}
+
+.zm-900{
+    font-weight: 900;
+}
+/* 標題 */
+.mytitle01{
+    font-size: 120px;
+    font-weight: 500;
+    text-align: center;
+    color: #9c0884;
+}
+
+.mytitle02{
+    font-size: 100px;
+    font-weight: 700;
+    text-align: center;
+    color: #005f73;
+}
+
+.mytitle03{
+    font-size: 80px;
+    font-weight: 900;
+    text-align: center;
+    color: #2b8012;
+}
+
+.mytitle04{
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    color: #2b8012;
+}
+
+
+.mytitle05{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    color: #2b8012;
+}
+
+
+/* 背景圖 */
+.bg-img{
+    background-position: center center;
+    background-size: cover;
+}
+
+/* variables.css */
+:root {
+  --primary-color: #2563eb;    /* 主視覺色 */
+  --secondary-color: #475569;  /* 次要文字色 */
+  --text-color: #1e293b;       /* 主要文字色 */
+  --bg-color: #ffffff;         /* 背景色 */
+  --card-bg: #f8fafc;          /* 卡片背景色 */
+  --border-radius: 8px;        /* 圓角 */
+  --transition: all 0.3s ease; /* 動態過渡 */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* 區塊通用通用樣式 */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* cards.css */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+
+/* timeline.css */
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 20px;
+  margin-left: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* 時間軸圓點 */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  border: 2px solid var(--primary-color);
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.timeline-title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+
+/* buttons.css */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
