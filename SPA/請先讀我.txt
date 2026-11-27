@@ -1,8 +1,0 @@
-請整包解壓縮，不要只抽出 index.html。
-
-正確開法：
-1. 解壓縮後會得到 1104newindex 資料夾
-2. 資料夾裡要同時有：index.html、css、images、CREDITS.txt
-3. 用瀏覽器打開 1104newindex 資料夾裡的 index.html
-
-若只留下 html，配色和圖片都會消失。
