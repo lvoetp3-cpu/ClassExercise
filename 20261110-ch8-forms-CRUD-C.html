@@ -115,8 +115,8 @@
 
                     </div>
                     <div class="card-footer text-end">
-                        <button class="btn btn-app-cancel"><i class="fa-solid fa-xmark"></i>取消</button>
-                        <button class="btn btn-app-primary" id="ok-btn"><i class="fa-solid fa-check"></i>確認</button>
+                        <button type="button" class="btn btn-app-cancel"><i class="fa-solid fa-xmark"></i>取消</button>
+                        <button type="button" class="btn btn-app-primary" id="ok-btn"><i class="fa-solid fa-check"></i>確認</button>
                     </div>
                 </div>
             </div>
@@ -132,8 +132,8 @@
                         <div class="confirm-row"><span class="confirm-label">產品分類</span><span class="confirm-value">XXXX</span></div>
                         <div class="confirm-row"><span class="confirm-label">產品備註</span><span class="confirm-value">XXXX</span></div>
                     </div>
-                    <button class="btn btn-app-cancel w-100"><i class="fa-solid fa-xmark"></i>取消</button>
-                    <button class="btn btn-app-primary w-100 mt-3"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
+                    <button type="button" class="btn btn-app-cancel w-100"><i class="fa-solid fa-xmark"></i>取消</button>
+                    <button type="button" class="btn btn-app-primary w-100 mt-3"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
                 </div>
             </div>
         </div>
@@ -142,15 +142,16 @@
     <script src="./js/jquery-4.0.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // 以下 JavaScript 邏輯與原檔相同，僅「確認區的 HTML 字串」與 SweetAlert 配色做視覺調整
         const SWAL_COLOR = "#2f7f79"; // SweetAlert2 確認鈕顏色（對應 --app-teal）
+        const API_URL = "http://localhost:8080/product";
 
         let flag_pname = false;
         let flag_price = true;
         let flag_category = false;
         let flag_remark = false;
+
         $(function () {
-            //產品名稱
+            // 產品名稱
             $("#pname").on("change", function () {
                 if ($(this).val().length > 1 && $(this).val().length < 7) {
                     $(this).removeClass("is-invalid");
@@ -163,7 +164,7 @@
                 }
             });
 
-            //價格
+            // 價格
             $("#price").on("change", function () {
                 if ($(this).val() > 0 && $(this).val() < 101) {
                     $(this).removeClass("is-invalid");
@@ -176,20 +177,18 @@
                 }
             });
 
-            //數量
+            // 數量
             $("#num").on("change", function () {
-                console.log($(this).val());
                 $("#num-text").text($(this).val());
             });
 
-            //產品分類
+            // 產品分類
             $("#category").on("change", function () {
-                console.log($(this).val());
                 $(this).addClass("is-valid");
                 flag_category = true;
             });
 
-            //產品備註
+            // 產品備註
             $("#remark").on("change", function () {
                 if ($(this).val().length > 1 && $(this).val().length < 11) {
                     $(this).removeClass("is-invalid");
@@ -202,18 +201,17 @@
                 }
             });
 
-            //按鈕監聽 #ok-btn
+            // 按鈕監聽 #ok-btn
             $("#ok-btn").on("click", function () {
                 if (flag_pname && flag_price && flag_category && flag_remark) {
                     $("#showmsg").removeClass("d-none");
 
-                    const pname = $("#pname").val();
-                    const price = $("#price").val();
-                    const num = $("#num").val();
+                    const pname = $("#pname").val().trim();
+                    const price = Number($("#price").val());
+                    const num = Number($("#num").val());
                     const category = $("#category").val();
-                    const remark = $("#remark").val();
+                    const remark = $("#remark").val().trim();
 
-                    // 確認區 HTML：版面改為「標籤／內容」列表，變數與 #send-btn 維持不變
                     let strHTML = `<div class="confirm-panel">
                                 <div class="confirm-title"><i class="fa-solid fa-clipboard-check"></i>產品建檔資確認</div>
                                 <div class="confirm-list">
@@ -223,8 +221,8 @@
                                     <div class="confirm-row"><span class="confirm-label">產品分類</span><span class="confirm-value">${category}</span></div>
                                     <div class="confirm-row"><span class="confirm-label">產品備註</span><span class="confirm-value">${remark}</span></div>
                                 </div>
-                                <button class="btn btn-app-cancel w-100"><i class="fa-solid fa-xmark"></i>取消</button>
-                                <button class="btn btn-app-primary w-100 mt-3" id="send-btn"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
+                                <button type="button" class="btn btn-app-cancel w-100" id="cancel-confirm-btn"><i class="fa-solid fa-xmark"></i>取消</button>
+                                <button type="button" class="btn btn-app-primary w-100 mt-3" id="send-btn"><i class="fa-solid fa-paper-plane"></i>確認送出</button>
                             </div>`;
                     $("#showmsg").html(strHTML);
                 } else {
@@ -237,16 +235,19 @@
                 }
             });
 
-            //確認送出 #send-btn
-            $("#showmsg").on("click", "#send-btn", function () {
-                //蒐集欄位資料
-                const pname = $("#pname").val();
-                const price = $("#price").val();
-                const num = $("#num").val();
-                const category = $("#category").val();
-                const remark = $("#remark").val();
+            // 取消核對區塊
+            $("#showmsg").on("click", "#cancel-confirm-btn", function () {
+                $("#showmsg").addClass("d-none");
+            });
 
-                //轉成JSON物件
+            // 確認送出 #send-btn
+            $("#showmsg").on("click", "#send-btn", function () {
+                const pname = $("#pname").val().trim();
+                const price = Number($("#price").val());
+                const num = Number($("#num").val());
+                const category = $("#category").val();
+                const remark = $("#remark").val().trim();
+
                 const dataJSON = {
                     "name": pname,
                     "category": category,
@@ -255,20 +256,13 @@
                     "remark": remark
                 };
 
-                console.log(dataJSON);
-                console.log(JSON.stringify(dataJSON));
-
-                //傳送資料至後端API，執行新增動作
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3000/product",
+                    url: API_URL,
                     dataType: "json",
                     data: JSON.stringify(dataJSON),
                     contentType: "application/json",
-                    success: function (data) {
-                        console.log(data)
-                        //新增成功後，考慮介面的流暢度
-                        //sweetalert
+                    success: function () {
                         Swal.fire({
                             title: "新增成功",
                             text: "產品資料已經建立。",
@@ -276,42 +270,44 @@
                             confirmButtonColor: SWAL_COLOR
                         });
 
-                        //showmsg 關閉
                         $("#showmsg").addClass("d-none");
-
-                        //清除欄位
                         $("#pname").val("");
                         $("#price").val(50);
                         $("#num").val(50);
-                        $("#num-text").text(50)
+                        $("#num-text").text(50);
                         $("#category").val("");
                         $("#remark").val("");
 
-                        //重設驗證樣式
                         $("#pname, #price, #category, #remark").removeClass("is-valid is-invalid");
 
-                        //重設旗標
                         flag_pname = false;
                         flag_price = true;
                         flag_category = false;
                         flag_remark = false;
                     },
-                    error: function () {
+                    error: function (xhr) {
+                        const errMsg = (xhr.responseJSON && xhr.responseJSON.error)
+                            ? xhr.responseJSON.error
+                            : "無法連接後端API。";
+
                         Swal.fire({
                             title: "新增失敗",
-                            text: "無法連接後端API。",
+                            text: errMsg,
                             icon: "error",
                             confirmButtonColor: SWAL_COLOR
                         });
                     }
-
                 });
-
-
             });
-
         });
     </script>
 </body>
 
 </html>
+```[cite: 2]
+
+<ElicitationsGroup message="如果你在還原或串接時遇到狀況，可以直接點選下方選項：">
+  <Elicitation label="CSS或JS路徑跑掉" query="還原後頁面樣式或 Bootstrap、jQuery 載入失敗，路徑該怎麼檢查？"/>
+  <Elicitation label="送出顯示無法連線" query="在新增頁按確認送出時跳出無法連接後端API，該怎麼排查？"/>
+  <Elicitation label="Git或復原檔協助" query="我有用 Git 或 VS Code 本機歷程，怎麼把檔案退回上一個版本？"/>
+</ElicitationsGroup>

@@ -227,7 +227,7 @@
             //取得資料  GET API
             $.ajax({
                 type: "GET",
-                url: "http://localhost:3000/product",
+                url: "http://localhost:8080/product",
                 dataType: "json",
                 success: showdata,
                 error: function () {
@@ -261,7 +261,7 @@
                 //傳遞至後端API 取得資料
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:3000/product/" + id,
+                    url: "http://localhost:8080/product/" + id,
                     dataType: "json",
                     success: showUpdateData,
                     error: function () {
