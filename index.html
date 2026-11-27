@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>學習歷程首頁 - 個人作品集與筆記</title>
-    <!-- 引入 Bootstrap 5 CSS -->
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/style.css">
 
     <style>
         :root {
@@ -339,7 +337,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 與 jQuery Script -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-4.0.0.js"></script>
     <script src="js/travelfood.js"></script>
@@ -361,7 +358,8 @@
             { date: '2026-10-27', tag: 'Forms Exercise', title: '1027 CH8 forms AI套版 (02)', desc: '點擊前往觀看表單綜合應用演練。', link: '1027-indexaitry02.html' },
             { date: '2026-11-03', tag: 'AI Coding', title: '1103 初心者職業島Career Island', desc: '給國高中學生未來職涯參考', link: '1103-Career_Island.html' },
             { date: '2026-11-05', tag: 'SPA Section', title: '1105 SPA一頁式個人履歷', desc: '求職履歷', link: 'https://stalwart-sunburst-5badbc.netlify.app/' },
-            { date: '2026-11-27', tag: 'Crud', title: 'CRUD/API/Json Server', desc: '課堂操作', link: 'flask/20261110-ch8-forms-CRUD-C.html' },
+            { date: '2026-11-10', tag: 'CRUD', title: 'CRUD 產品建檔', desc: '課堂操作：耗材建檔（Create）。', link: '20261110-ch8-forms-CRUD-C.html' },
+            { date: '2026-11-10', tag: 'CRUD', title: 'CRUD 產品列表', desc: '課堂操作：耗材列表（Read）。', link: '20261110-ch8-forms-CRUD-R.html' },
             { date: '2026-11-25', tag: 'AI Coding', title: 'AI Career Analysis｜AI 職涯分析測試', desc: '全端練習', link: 'https://ai-career-analysis-production.up.railway.app/' },
             { date: '2026-11-20', tag: 'AI Coding', title: 'PSOC政治轉圈圈', desc: '網頁遊戲', link: 'https://political-storm.netlify.app/' }
             
@@ -374,9 +372,10 @@
             container.innerHTML = data.map(item => `
                 <div class="col-md-4">
                     <div class="work-card">
-                        <a href="${item.link}" target="_blank">
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
                             <h5>${item.tag}</h5>
                             <h3>${item.title}</h3>
+                            <p class="text-muted small mb-2">${item.date}</p>
                             <p class="text-muted mb-0">${item.desc}</p>
                         </a>
                     </div>
