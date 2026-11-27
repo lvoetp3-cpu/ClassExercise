@@ -1,0 +1,125 @@
+{
+  "cities": [
+    {
+    "ZipCode": "100",
+    "AreaName": "中正區",
+    "AreaEngName": "Zhongzheng Dist.",
+    "id": "1"
+}
+    {
+      "id": "2",
+      "ZipCode": "103",
+      "AreaName": "大同區",
+      "AreaEngName": "Datong Dist."
+    },
+    {
+      "id": "3",
+      "ZipCode": "104",
+      "AreaName": "中山區",
+      "AreaEngName": "Zhongshan Dist."
+    },
+    {
+      "id": "4",
+      "ZipCode": "105",
+      "AreaName": "松山區",
+      "AreaEngName": "Songshan Dist."
+    },
+    {
+      "id": "5",
+      "ZipCode": "106",
+      "AreaName": "大安區",
+      "AreaEngName": "Da'an Dist."
+    },
+    {
+      "id": "6",
+      "ZipCode": "108",
+      "AreaName": "萬華區",
+      "AreaEngName": "Wanhua Dist."
+    },
+    {
+      "id": "7",
+      "ZipCode": "110",
+      "AreaName": "信義區",
+      "AreaEngName": "Xinyi Dist."
+    },
+    {
+      "id": "8",
+      "ZipCode": "111",
+      "AreaName": "士林區",
+      "AreaEngName": "Shilin Dist."
+    },
+    {
+      "id": "9",
+      "ZipCode": "112",
+      "AreaName": "北投區",
+      "AreaEngName": "Beitou Dist."
+    },
+    {
+      "id": "10",
+      "ZipCode": "114",
+      "AreaName": "內湖區",
+      "AreaEngName": "Neihu Dist."
+    },
+    {
+      "id": "11",
+      "ZipCode": "115",
+      "AreaName": "南港區",
+      "AreaEngName": "Nangang Dist."
+    },
+    {
+      "id": "12",
+      "ZipCode": "116",
+      "AreaName": "文山區",
+      "AreaEngName": "Wenshan Dist."
+    },
+    {
+      "id": "13",
+      "ZipCode": "200",
+      "AreaName": "仁愛區",
+      "AreaEngName": "Ren'ai Dist."
+    },
+    {
+      "id": "14",
+      "ZipCode": "201",
+      "AreaName": "信義區",
+      "AreaEngName": "Xinyi Dist."
+    },
+    {
+      "id": "15",
+      "ZipCode": "202",
+      "AreaName": "中正區",
+      "AreaEngName": "Zhongzheng Dist."
+    },
+    {
+      "id": "16",
+      "ZipCode": "203",
+      "AreaName": "中山區",
+      "AreaEngName": "Zhongshan Dist."
+    },
+    {
+      "id": "17",
+      "ZipCode": "204",
+      "AreaName": "安樂區",
+      "AreaEngName": "Anle Dist."
+    },
+    {
+      "id": "18",
+      "ZipCode": "205",
+      "AreaName": "暖暖區",
+      "AreaEngName": "Nuannuan Dist."
+    },
+    {
+      "id": "19",
+      "ZipCode": "206",
+      "AreaName": "七堵區",
+      "AreaEngName": "Qidu Dist."
+    },
+    {
+      "id": "20",
+      "ZipCode": "220",
+      "AreaName": "板橋區",
+      "AreaEngName": "Banqiao Dist."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
